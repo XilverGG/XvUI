@@ -1,0 +1,7 @@
+<Ui>
+	<Script file='ElvUI.lua'/>
+	<Script file='Plater.lua'/>
+	<Script file='Details.lua'/>
+	<Script file='BigWigs.lua'/>
+	<Script file='OmniCD.lua'/>
+</Ui>
