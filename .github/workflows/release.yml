@@ -2,6 +2,8 @@ name: Release
 
 on:
   push:
+    branches:
+      - main
     tags:
       - '*'
     paths-ignore:
@@ -22,5 +24,3 @@ jobs:
 
       - name: Package and release
         uses: BigWigsMods/packager@v2
-        with:
-          args: -n "{package-name}-{project-version}"
