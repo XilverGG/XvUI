@@ -1,6 +1,6 @@
 ## Interface: 110100
 ## Author: Xilver
-## Version: 2.01
+## Version: 1.01
 ## Title:|cff0099ffXv|r|cffffffffUI|r
 ## IconTexture: Interface\AddOns\XvUI\Media\Textures\XvUI_Logo
 ## Notes: XvUI
