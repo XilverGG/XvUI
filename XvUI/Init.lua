@@ -11,6 +11,9 @@ local GetCVarBool = GetCVarBool
 local ReloadUI = ReloadUI
 local StopMusic = StopMusic
 
+-- Global environment
+local _G = _G
+
 -- AddOn namespace
 local Name, Private = ...
 
@@ -29,12 +32,13 @@ local XVUI = E:NewModule(Name, "AceHook-3.0", "AceEvent-3.0", "AceTimer-3.0");
 Private.Logo = 'Interface\\AddOns\\XvUI\\Media\\Textures\\XvUI_Logo'
 Private.Name = '|cff0099ffXv|r|cffffffffUI|r'
 
+-- Constants: Media
+Private.Font = 'XvUI'
+Private.Texture = 'XvUI'
+
 -- Constants: Version checks
 --Private.RequiredElvUI = tonumber(GetAddOnMetadata(Name, 'X-Required-ElvUI'))
 Private.Version = tonumber(GetAddOnMetadata(Name, 'Version'))
-
--- Global environment
-local _G = _G
 
 -- Chat print
 function Private:Print(msg)

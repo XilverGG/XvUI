@@ -315,20 +315,20 @@ function Private:Setup_OmniCD(installer)
 	OmniCDDB['profiles'][name]["General"] = {
 		["fonts"] = {
 			["statusBar"] = {
-				["font"] = "XvUI",
+				["font"] = Private.Font,
 			},
 			["icon"] = {
-				["font"] = "XvUI",
+				["font"] = Private.Font,
 				["size"] = 12,
 			},
 			["anchor"] = {
-				["font"] = "XvUI",
+				["font"] = Private.Font,
 			},
 		},
 		["textures"] = {
 			["statusBar"] = {
 				["BG"] = "ElvUI Norm",
-				["bar"] = "XvUI",
+				["bar"] = Private.Texture,
 			},
 		}
 	}
