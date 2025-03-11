@@ -11,285 +11,267 @@ function Private:Setup_ElvUI()
 	Private:Setup_ElvUI_Profile()
 	Private:Setup_ElvUI_PrivateDB()
 	Private:Setup_ElvUI_GlobalDB()
+	
+	Private:Setup_ElvUI_WeakAuras()
 end
 
 function Private:Setup_ElvUI_Profile()
-
-    E.data:SetProfile('XvUI')
-
-	E.db["WeakAuras"]["cooldown"]["fonts"]["enable"] = true
-	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = "Friz Quadrata TT"
-	E.db["WeakAuras"]["cooldown"]["fonts"]["fontSize"] = 16
-	E.db["WeakAuras"]["cooldown"]["hideBlizzard"] = true
-	E.db["abb"]["bar1"]["customTriggers"] = true
-	E.db["abb"]["bar1"]["displayTriggers"]["hasFocus"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["hasTarget"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["inCombat"] = 0
-	E.db["abb"]["bar1"]["displayTriggers"]["inVehicle"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["isDragonRiding"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
-	E.db["abb"]["bar1"]["displayTriggers"]["isPossessed"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["isProfessionBookOpen"] = true
-	E.db["abb"]["bar1"]["displayTriggers"]["notMaxHealth"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["playerCasting"] = false
-	E.db["abb"]["bar1"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar10"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar13"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar14"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar15"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar2"]["displayTriggers"]["hasFocus"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["hasOverridebar"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["hasTarget"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["inCombat"] = 0
-	E.db["abb"]["bar2"]["displayTriggers"]["inVehicle"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["isDragonRiding"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["isPossessed"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["mouseover"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["notMaxHealth"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["playerCasting"] = false
-	E.db["abb"]["bar2"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar3"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar4"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar5"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar6"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar7"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar8"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar9"]["inheritGlobalFade"] = true
-	E.db["abb"]["barPet"]["inheritGlobalFade"] = true
-	E.db["abb"]["global"]["displayTriggers"]["hasFocus"] = false
-	E.db["abb"]["global"]["displayTriggers"]["hasOverridebar"] = false
-	E.db["abb"]["global"]["displayTriggers"]["hasTarget"] = false
-	E.db["abb"]["global"]["displayTriggers"]["inCombat"] = 0
-	E.db["abb"]["global"]["displayTriggers"]["inVehicle"] = false
-	E.db["abb"]["global"]["displayTriggers"]["isDragonRiding"] = false
-	E.db["abb"]["global"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
-	E.db["abb"]["global"]["displayTriggers"]["isPossessed"] = false
-	E.db["abb"]["global"]["displayTriggers"]["isProfessionBookOpen"] = true
-	E.db["abb"]["global"]["displayTriggers"]["notMaxHealth"] = false
-	E.db["abb"]["global"]["displayTriggers"]["playerCasting"] = false
-	E.db["abb"]["global"]["globalFadeAlpha"] = 1
-	E.db["abb"]["stanceBar"]["displayTriggers"]["inCombat"] = 1
-	E.db["abb"]["stanceBar"]["inheritGlobalFade"] = true
+	
+	E.data:SetProfile('XvUI')
+	
+	E.db.movers = E.db.movers or {}
+	
+	-- ActionBars
 	E.db["actionbar"]["bar1"]["buttonSize"] = 36
 	E.db["actionbar"]["bar1"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar1"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar1"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar1"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar1"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar1"]["countFontSize"] = 12
-	E.db["actionbar"]["bar1"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar1"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar1"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar1"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar1"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar1"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar1"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar1"]["macrotext"] = true
+	E.db["actionbar"]["bar1"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar1"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar1"]["macroFontSize"] = 12
 	E.db["actionbar"]["bar1"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar1"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar1"]["macrotext"] = true
-	E.db["actionbar"]["bar1"]["paging"]["DEATHKNIGHT"] = ""
-	E.db["actionbar"]["bar10"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar10"]["countFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar10"]["countFontSize"] = 12
-	E.db["actionbar"]["bar10"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar10"]["hotkeyFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar10"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar10"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar10"]["macroFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar10"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar13"]["buttonSize"] = 36
-	E.db["actionbar"]["bar13"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar13"]["buttonsPerRow"] = 4
-	E.db["actionbar"]["bar13"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar13"]["countFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar13"]["countFontSize"] = 12
-	E.db["actionbar"]["bar13"]["enabled"] = true
-	E.db["actionbar"]["bar13"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar13"]["hotkeyFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar13"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar13"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar13"]["macroFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar13"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar13"]["macroTextPosition"] = "BOTTOMRIGHT"
-	E.db["actionbar"]["bar13"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar13"]["macrotext"] = true
-	E.db["actionbar"]["bar14"]["buttonSize"] = 36
-	E.db["actionbar"]["bar14"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar14"]["buttonsPerRow"] = 4
-	E.db["actionbar"]["bar14"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar14"]["countFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar14"]["countFontSize"] = 12
-	E.db["actionbar"]["bar14"]["enabled"] = true
-	E.db["actionbar"]["bar14"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar14"]["hotkeyFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar14"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar14"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar14"]["macroFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar14"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar14"]["macroTextPosition"] = "BOTTOMRIGHT"
-	E.db["actionbar"]["bar14"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar14"]["macrotext"] = true
-	E.db["actionbar"]["bar15"]["buttonSize"] = 36
-	E.db["actionbar"]["bar15"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar15"]["buttons"] = 6
-	E.db["actionbar"]["bar15"]["buttonsPerRow"] = 1
-	E.db["actionbar"]["bar15"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar15"]["countFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar15"]["countFontSize"] = 12
-	E.db["actionbar"]["bar15"]["enabled"] = true
-	E.db["actionbar"]["bar15"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar15"]["hotkeyFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar15"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar15"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar15"]["macroFontOutline"] = "OUTLINE"
-	E.db["actionbar"]["bar15"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar15"]["macroTextPosition"] = "BOTTOMRIGHT"
-	E.db["actionbar"]["bar15"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar15"]["macrotext"] = true
-	E.db["actionbar"]["bar15"]["point"] = "TOPLEFT"
+
 	E.db["actionbar"]["bar2"]["buttonSize"] = 36
 	E.db["actionbar"]["bar2"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar2"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar2"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar2"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar2"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar2"]["countFontSize"] = 12
-	E.db["actionbar"]["bar2"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar2"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar2"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar2"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar2"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar2"]["inheritGlobalFade"] = true
-	E.db["actionbar"]["bar2"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar2"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar2"]["macrotext"] = true
+	E.db["actionbar"]["bar2"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar2"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar2"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar2"]["visibility"] = "[petbattle] hide; show"
-	E.db["actionbar"]["bar3"]["buttonSize"] = 36
-	E.db["actionbar"]["bar3"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar2"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar2"]["macroTextYOffset"] = 0
+
+	E.db["actionbar"]["bar3"]["enabled"] = true
 	E.db["actionbar"]["bar3"]["buttons"] = 12
 	E.db["actionbar"]["bar3"]["buttonsPerRow"] = 12
-	E.db["actionbar"]["bar3"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar3"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar3"]["buttonSize"] = 36
+	E.db["actionbar"]["bar3"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar3"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar3"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar3"]["countFontSize"] = 12
-	E.db["actionbar"]["bar3"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar3"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar3"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar3"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar3"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar3"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar3"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar3"]["macrotext"] = true
+	E.db["actionbar"]["bar3"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar3"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar3"]["macroFontSize"] = 12
 	E.db["actionbar"]["bar3"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar3"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar3"]["macrotext"] = true
-	E.db["actionbar"]["bar3"]["visibility"] = "[petbattle] hide; show"
+
+	E.db["actionbar"]["bar4"]["enabled"] = true
+	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar4"]["backdrop"] = false
 	E.db["actionbar"]["bar4"]["buttonSize"] = 36
 	E.db["actionbar"]["bar4"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 12
-	E.db["actionbar"]["bar4"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar4"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar4"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar4"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar4"]["countFontSize"] = 12
-	E.db["actionbar"]["bar4"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar4"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar4"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar4"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar4"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar4"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar4"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar4"]["macrotext"] = true
+	E.db["actionbar"]["bar4"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar4"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar4"]["macroFontSize"] = 12
 	E.db["actionbar"]["bar4"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar4"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar4"]["macrotext"] = true
-	E.db["actionbar"]["bar4"]["paging"]["DEATHKNIGHT"] = ""
 	E.db["actionbar"]["bar4"]["point"] = "BOTTOMLEFT"
-	E.db["actionbar"]["bar4"]["visibility"] = "[petbattle] hide; show"
-	E.db["actionbar"]["bar5"]["buttonSize"] = 36
-	E.db["actionbar"]["bar5"]["buttonSpacing"] = 5
+
+	E.db["actionbar"]["bar5"]["enabled"] = true
 	E.db["actionbar"]["bar5"]["buttons"] = 12
 	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 4
-	E.db["actionbar"]["bar5"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar5"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar5"]["buttonSize"] = 36
+	E.db["actionbar"]["bar5"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar5"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar5"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar5"]["countFontSize"] = 12
-	E.db["actionbar"]["bar5"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar5"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar5"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar5"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar5"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar5"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar5"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar5"]["macrotext"] = true
+	E.db["actionbar"]["bar5"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar5"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar5"]["macroFontSize"] = 12
 	E.db["actionbar"]["bar5"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar5"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar5"]["macrotext"] = true
-	E.db["actionbar"]["bar5"]["visibility"] = "[petbattle] hide; show"
+
+	E.db["actionbar"]["bar6"]["enabled"] = true
+	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar6"]["buttonSize"] = 36
 	E.db["actionbar"]["bar6"]["buttonSpacing"] = 5
-	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 4
-	E.db["actionbar"]["bar6"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar6"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar6"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar6"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar6"]["countFontSize"] = 12
-	E.db["actionbar"]["bar6"]["enabled"] = true
-	E.db["actionbar"]["bar6"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar6"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar6"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar6"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar6"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar6"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar6"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar6"]["macrotext"] = true
+	E.db["actionbar"]["bar6"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar6"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar6"]["macroFontSize"] = 12
 	E.db["actionbar"]["bar6"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar6"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar6"]["macrotext"] = true
-	E.db["actionbar"]["bar6"]["visibility"] = "[petbattle] hide; show"
-	E.db["actionbar"]["bar7"]["buttonSpacing"] = 4
-	E.db["actionbar"]["bar7"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar7"]["countFontOutline"] = "OUTLINE"
+
+	E.db["actionbar"]["bar7"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar7"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar7"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar7"]["countFontSize"] = 12
-	E.db["actionbar"]["bar7"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar7"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar7"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar7"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar7"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar7"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar7"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar7"]["macrotext"] = true
+	E.db["actionbar"]["bar7"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar7"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar7"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar8"]["buttonSpacing"] = 4
-	E.db["actionbar"]["bar8"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar8"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar7"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar7"]["macroTextYOffset"] = 0
+
+	E.db["actionbar"]["bar8"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar8"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar8"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar8"]["countFontSize"] = 12
-	E.db["actionbar"]["bar8"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar8"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar8"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar8"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar8"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar8"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar8"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar8"]["macrotext"] = true
+	E.db["actionbar"]["bar8"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar8"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar8"]["macroFontSize"] = 12
-	E.db["actionbar"]["bar9"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar9"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar8"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar8"]["macroTextYOffset"] = 0
+
+	E.db["actionbar"]["bar9"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar9"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar9"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar9"]["countFontSize"] = 12
-	E.db["actionbar"]["bar9"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar9"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar9"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar9"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar9"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["bar9"]["macroFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["bar9"]["macroFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["bar9"]["macrotext"] = true
+	E.db["actionbar"]["bar9"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar9"]["macroFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar9"]["macroFontSize"] = 12
+	E.db["actionbar"]["bar9"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar9"]["macroTextYOffset"] = 0
+
+	E.db["actionbar"]["bar10"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar10"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar10"]["countFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar10"]["countFontSize"] = 12
+	E.db["actionbar"]["bar10"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar10"]["hotkeyFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar10"]["hotkeyFontSize"] = 12
+	E.db["actionbar"]["bar10"]["macrotext"] = true
+	E.db["actionbar"]["bar10"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar10"]["macroFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar10"]["macroFontSize"] = 12
+	E.db["actionbar"]["bar10"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar10"]["macroTextYOffset"] = 0
+	
+	E.db["actionbar"]["bar13"]["enabled"] = true
+	E.db["actionbar"]["bar13"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar13"]["buttonSize"] = 36
+	E.db["actionbar"]["bar13"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar13"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar13"]["countFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar13"]["countFontSize"] = 12
+	E.db["actionbar"]["bar13"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar13"]["hotkeyFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar13"]["hotkeyFontSize"] = 12
+	E.db["actionbar"]["bar13"]["macrotext"] = true
+	E.db["actionbar"]["bar13"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar13"]["macroFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar13"]["macroFontSize"] = 12
+	E.db["actionbar"]["bar13"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar13"]["macroTextYOffset"] = 0
+
+	E.db["actionbar"]["bar14"]["enabled"] = true
+	E.db["actionbar"]["bar14"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar14"]["buttonSize"] = 36
+	E.db["actionbar"]["bar14"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar14"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar14"]["countFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar14"]["countFontSize"] = 12
+	E.db["actionbar"]["bar14"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar14"]["hotkeyFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar14"]["hotkeyFontSize"] = 12
+	E.db["actionbar"]["bar14"]["macrotext"] = true
+	E.db["actionbar"]["bar14"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar14"]["macroFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar14"]["macroFontSize"] = 12
+	E.db["actionbar"]["bar14"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar14"]["macroTextYOffset"] = 0
+
+	E.db["actionbar"]["bar15"]["enabled"] = true
+	E.db["actionbar"]["bar15"]["buttons"] = 6
+	E.db["actionbar"]["bar15"]["buttonsPerRow"] = 1
+	E.db["actionbar"]["bar15"]["buttonSize"] = 36
+	E.db["actionbar"]["bar15"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar15"]["countFont"] = Private.Font
+	E.db["actionbar"]["bar15"]["countFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar15"]["countFontSize"] = 12
+	E.db["actionbar"]["bar15"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["bar15"]["hotkeyFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar15"]["hotkeyFontSize"] = 12
+	E.db["actionbar"]["bar15"]["macrotext"] = true
+	E.db["actionbar"]["bar15"]["macroFont"] = Private.Font
+	E.db["actionbar"]["bar15"]["macroFontOutline"] = Private.Outline
+	E.db["actionbar"]["bar15"]["macroFontSize"] = 12
+	E.db["actionbar"]["bar15"]["macroTextPosition"] = "BOTTOMRIGHT"
+	E.db["actionbar"]["bar15"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar15"]["point"] = "TOPLEFT"
+	
+	E.db["actionbar"]["barPet"]["buttonsPerRow"] = 10
 	E.db["actionbar"]["barPet"]["backdrop"] = false
 	E.db["actionbar"]["barPet"]["buttonSize"] = 36
 	E.db["actionbar"]["barPet"]["buttonSpacing"] = 5
-	E.db["actionbar"]["barPet"]["buttonsPerRow"] = 10
-	E.db["actionbar"]["barPet"]["countFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["barPet"]["countFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["barPet"]["countFont"] = Private.Font
+	E.db["actionbar"]["barPet"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["barPet"]["countFontSize"] = 12
-	E.db["actionbar"]["barPet"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["barPet"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["barPet"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["barPet"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["barPet"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["barPet"]["inheritGlobalFade"] = true
 	E.db["actionbar"]["barPet"]["point"] = "BOTTOMLEFT"
-	E.db["actionbar"]["extraActionButton"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["extraActionButton"]["hotkeyFontOutline"] = "OUTLINE"
+
+	E.db["actionbar"]["extraActionButton"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["extraActionButton"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["extraActionButton"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["font"] = "XvUI"
-	E.db["actionbar"]["fontOutline"] = "OUTLINE"
+
+	E.db["actionbar"]["font"] = Private.Font
+	E.db["actionbar"]["fontOutline"] = Private.Outline
 	E.db["actionbar"]["fontSize"] = 12
+
+	E.db["actionbar"]["microbar"]["enabled"] = true
 	E.db["actionbar"]["microbar"]["buttonHeight"] = 24
 	E.db["actionbar"]["microbar"]["buttonSpacing"] = 1
-	E.db["actionbar"]["microbar"]["enabled"] = true
 	E.db["actionbar"]["microbar"]["useIcons"] = false
+
 	E.db["actionbar"]["stanceBar"]["buttonSize"] = 36
 	E.db["actionbar"]["stanceBar"]["buttonSpacing"] = 5
-	E.db["actionbar"]["stanceBar"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["stanceBar"]["hotkeyFontOutline"] = "OUTLINE"
+	E.db["actionbar"]["stanceBar"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["stanceBar"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["stanceBar"]["hotkeyFontSize"] = 12
-	E.db["actionbar"]["stanceBar"]["inheritGlobalFade"] = true
 	E.db["actionbar"]["stanceBar"]["point"] = "BOTTOMLEFT"
-	E.db["actionbar"]["vehicleExitButton"]["hotkeyFont"] = "Friz Quadrata TT"
-	E.db["actionbar"]["vehicleExitButton"]["hotkeyFontOutline"] = "OUTLINE"
+
+	E.db["actionbar"]["vehicleExitButton"]["hotkeyFont"] = Private.Font
+	E.db["actionbar"]["vehicleExitButton"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["vehicleExitButton"]["hotkeyFontSize"] = 12
 	E.db["actionbar"]["vehicleExitButton"]["size"] = 36
+
 	E.db["actionbar"]["zoneActionButton"]["clean"] = true
+
 	E.db["auras"]["buffs"]["countFont"] = "XvUI"
 	E.db["auras"]["buffs"]["countFontOutline"] = "OUTLINE"
 	E.db["auras"]["buffs"]["countFontSize"] = 12
@@ -298,6 +280,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["auras"]["buffs"]["timeFont"] = "XvUI"
 	E.db["auras"]["buffs"]["timeFontOutline"] = "OUTLINE"
 	E.db["auras"]["buffs"]["timeFontSize"] = 12
+
 	E.db["auras"]["debuffs"]["countFont"] = "XvUI"
 	E.db["auras"]["debuffs"]["countFontOutline"] = "OUTLINE"
 	E.db["auras"]["debuffs"]["countFontSize"] = 12
@@ -306,6 +289,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["auras"]["debuffs"]["timeFont"] = "XvUI"
 	E.db["auras"]["debuffs"]["timeFontOutline"] = "OUTLINE"
 	E.db["auras"]["debuffs"]["timeFontSize"] = 12
+	
 	E.db["bags"]["bagButtonSpacing"] = 3
 	E.db["bags"]["bagSize"] = 36
 	E.db["bags"]["bagWidth"] = 450
@@ -846,15 +830,18 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["frameLevel"] = 2
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["frameStrata"] = "MEDIUM"
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["useCustomStrata"] = true
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["attachTextTo"] = "Health"
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["enable"] = true
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["font"] = "FRIZQT__"
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["fontOutline"] = "SHADOW"
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["justifyH"] = "RIGHT"
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["size"] = 16
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["text_format"] = "[absorbs]"
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["xOffset"] = -10
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"]["yOffset"] = 0
+	E.db["unitframe"]["units"]["player"]["customTexts"] = {}
+	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"] = {
+		["attachTextTo"] = "Health",
+		["enable"] = true,
+		["font"] = "FRIZQT__",
+		["fontOutline"] = "SHADOW",
+		["justifyH"] = "RIGHT",
+		["size"] = 16,
+		["text_format"] = "[absorbs]",
+		["xOffset"] = -10,
+		["yOffset"] = 0
+	}
 	E.db["unitframe"]["units"]["player"]["debuffs"]["anchorPoint"] = "TOPRIGHT"
 	E.db["unitframe"]["units"]["player"]["debuffs"]["attachTo"] = "BUFFS"
 	E.db["unitframe"]["units"]["player"]["debuffs"]["countFont"] = "Friz Quadrata TT"
@@ -1032,10 +1019,11 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["targettarget"]["raidicon"]["yOffset"] = 0
 	E.db["unitframe"]["units"]["targettarget"]["threatStyle"] = "GLOW"
 	E.db["unitframe"]["units"]["targettarget"]["width"] = 135
-
+	
+	
 	-- Update ElvUI
 	E:StaggeredUpdateAll()
-
+	
 	-- Show message about layout being set
 	PluginInstallStepComplete.message = "Layout Set"
 	PluginInstallStepComplete:Show()
@@ -1049,7 +1037,19 @@ function Private:Setup_ElvUI_GlobalDB()
 end
 
 function Private:Setup_ElvUI_PrivateDB()
-	E.private["bags"]["enable"] = true
+	
+	local isBagsEnabled = true
+	
+	local BAG_ADDONS = { "Bagnon", "BetterBags", "Baggins", "Sorted", "Inventorian", "Baganator", "ArkInventory", "OneBag3", "Combuctor" }
+	
+	for _, addon in ipairs(BAG_ADDONS) do
+		if E:IsAddOnEnabled(addon) then isBagsEnabled = false end
+	end
+	
+	E.private["bags"]["enable"] = isBagsEnabled
+	E.private["nameplates"]["enable"] = false
+	E.private["install_complete"] = E.version
+	
 	E.private["general"]["chatBubbleFont"] = "Friz Quadrata TT"
 	E.private["general"]["chatBubbles"] = "disabled"
 	E.private["general"]["dmgfont"] = "Friz Quadrata TT"
@@ -1066,8 +1066,7 @@ function Private:Setup_ElvUI_PrivateDB()
 	E.private["general"]["replaceNameFont"] = false
 	E.private["general"]["replaceNameplateFont"] = false
 	E.private["general"]["worldMap"] = false
-	E.private["install_complete"] = 13.81
-	E.private["nameplates"]["enable"] = false
+	
 	E.private["skins"]["blizzard"]["achievement"] = false
 	E.private["skins"]["blizzard"]["addonManager"] = false
 	E.private["skins"]["blizzard"]["adventureMap"] = false
@@ -1171,5 +1170,76 @@ function Private:Setup_ElvUI_PrivateDB()
 	E.private["skins"]["blizzard"]["weeklyRewards"] = false
 	E.private["skins"]["blizzard"]["worldmap"] = false
 	E.private["skins"]["parchmentRemoverEnable"] = true
+	
 	E.private["theme"] = "class"
+end
+
+function Private:Setup_ElvUI_ABB()
+	if not E:IsAddOnEnabled('ElvUI_ActionBarBuddy') then Private:Print('ElvUI_ActionBarBuddy ' .. 'is not installed or enabled.') return end
+	
+	E.db["abb"]["bar1"]["customTriggers"] = true
+	E.db["abb"]["bar1"]["displayTriggers"]["hasFocus"] = false
+	E.db["abb"]["bar1"]["displayTriggers"]["hasTarget"] = false
+	E.db["abb"]["bar1"]["displayTriggers"]["inCombat"] = 0
+	E.db["abb"]["bar1"]["displayTriggers"]["inVehicle"] = false
+	E.db["abb"]["bar1"]["displayTriggers"]["isDragonRiding"] = false
+	E.db["abb"]["bar1"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
+	E.db["abb"]["bar1"]["displayTriggers"]["isPossessed"] = false
+	E.db["abb"]["bar1"]["displayTriggers"]["isProfessionBookOpen"] = true
+	E.db["abb"]["bar1"]["displayTriggers"]["notMaxHealth"] = false
+	E.db["abb"]["bar1"]["displayTriggers"]["playerCasting"] = false
+	E.db["abb"]["bar1"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar10"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar13"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar14"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar15"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar2"]["displayTriggers"]["hasFocus"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["hasOverridebar"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["hasTarget"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["inCombat"] = 0
+	E.db["abb"]["bar2"]["displayTriggers"]["inVehicle"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["isDragonRiding"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["isPossessed"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["mouseover"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["notMaxHealth"] = false
+	E.db["abb"]["bar2"]["displayTriggers"]["playerCasting"] = false
+	E.db["abb"]["bar2"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar3"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar4"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar5"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar6"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar7"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar8"]["inheritGlobalFade"] = true
+	E.db["abb"]["bar9"]["inheritGlobalFade"] = true
+	E.db["abb"]["barPet"]["inheritGlobalFade"] = true
+	E.db["abb"]["global"]["displayTriggers"]["hasFocus"] = false
+	E.db["abb"]["global"]["displayTriggers"]["hasOverridebar"] = false
+	E.db["abb"]["global"]["displayTriggers"]["hasTarget"] = false
+	E.db["abb"]["global"]["displayTriggers"]["inCombat"] = 0
+	E.db["abb"]["global"]["displayTriggers"]["inVehicle"] = false
+	E.db["abb"]["global"]["displayTriggers"]["isDragonRiding"] = false
+	E.db["abb"]["global"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
+	E.db["abb"]["global"]["displayTriggers"]["isPossessed"] = false
+	E.db["abb"]["global"]["displayTriggers"]["isProfessionBookOpen"] = true
+	E.db["abb"]["global"]["displayTriggers"]["notMaxHealth"] = false
+	E.db["abb"]["global"]["displayTriggers"]["playerCasting"] = false
+	E.db["abb"]["global"]["globalFadeAlpha"] = 1
+	E.db["abb"]["stanceBar"]["displayTriggers"]["inCombat"] = 1
+	E.db["abb"]["stanceBar"]["inheritGlobalFade"] = true
+
+	-- Update ElvUI
+	E:StaggeredUpdateAll()
+
+	-- Show message about layout being set
+	PluginInstallStepComplete.message = "Layout Set"
+	PluginInstallStepComplete:Show()
+end
+
+function Private:Setup_ElvUI_WeakAuras()
+	if not E:IsAddOnEnabled('WeakAuras') then Private:Print('WeakAuras ' .. 'is not installed or enabled.') return end
+	
+	E.db["WeakAuras"]["cooldown"]["fonts"]["enable"] = true
+	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = "Friz Quadrata TT"
+	E.db["WeakAuras"]["cooldown"]["fonts"]["fontSize"] = 16
+	E.db["WeakAuras"]["cooldown"]["hideBlizzard"] = true
 end

@@ -35,6 +35,7 @@ Private.Name = '|cff0099ffXv|r|cffffffffUI|r'
 -- Constants: Media
 Private.Font = 'XvUI'
 Private.Texture = 'XvUI'
+Private.Outline = 'OUTLINE'
 
 -- Constants: Version checks
 --Private.RequiredElvUI = tonumber(GetAddOnMetadata(Name, 'X-Required-ElvUI'))
@@ -123,6 +124,14 @@ local InstallerData = {
 			PluginInstallFrame.Option1:SetText("Setup WarpDeplete")
 		end,
 		[8] = function()
+			PluginInstallFrame.SubTitle:SetText("ActionBar Buddy (ElvUI Plugin)")
+			PluginInstallFrame.Desc1:SetText("Default XvUI configuration for ActionBar Buddy (ElvUI Plugin).")
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Skip this step if you have not installed this addon."))
+			PluginInstallFrame.Option1:Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_ElvUI_ABB() end)
+			PluginInstallFrame.Option1:SetText("Setup")
+		end,
+		[9] = function()
 			PluginInstallFrame.SubTitle:SetText("Installation Complete")
 			PluginInstallFrame.Desc1:SetText("You have completed the installation process.")
 			PluginInstallFrame.Desc2:SetText("Please click the button below in order to finalize the process and automatically reload your UI.")
@@ -139,7 +148,8 @@ local InstallerData = {
 		[5] = "Details",
 		[6] = "OmniCD",
 		[7] = "WarpDeplete",
-		[8] = "Installation Complete"
+		[8] = "ActionBar Buddy",
+		[9] = "Installation Complete"
 	},
 	StepTitlesColor = {1, 1, 1},
 	StepTitlesColorSelected = {0, 179/255, 1},
