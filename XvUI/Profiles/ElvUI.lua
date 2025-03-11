@@ -30,7 +30,6 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["afk"] = false
 	E.db["general"]["altPowerBar"]["font"] = Private.Font
 	E.db["general"]["altPowerBar"]["statusBar"] = Private.Texture
-	E.db["general"]["altPowerBar"]["statusBar"] = "XvUI"
 	E.db["general"]["altPowerBar"]["statusBarColor"]["b"] = 0.80000007152557
 	E.db["general"]["altPowerBar"]["statusBarColor"]["g"] = 0.40000003576279
 	E.db["general"]["altPowerBar"]["statusBarColor"]["r"] = 0.20000001788139
