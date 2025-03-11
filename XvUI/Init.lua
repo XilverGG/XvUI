@@ -7,9 +7,7 @@ local GetAddOnMetadata = C_AddOns.GetAddOnMetadata
 
 -- Cache Lua / WoW API
 local format = string.format
-local GetCVarBool = GetCVarBool
 local ReloadUI = ReloadUI
-local StopMusic = StopMusic
 
 -- Global environment
 local _G = _G
@@ -19,14 +17,13 @@ local Name, Private = ...
 
 local Version = GetAddOnMetadata(Name, "Version")
 
--- Create references to ElvUI internals
+-- ElvUI modules
 local E, L, V, P, G = unpack(ElvUI)
-
--- Create reference to LibElvUIPlugin
 local EP = LibStub("LibElvUIPlugin-1.0")
+local PI = E:GetModule('PluginInstaller')
 
--- Create a new ElvUI module so ElvUI can handle initialization when ready
-local XVUI = E:NewModule(Name, "AceHook-3.0", "AceEvent-3.0", "AceTimer-3.0");
+-- Ace modules
+XVUI = E:NewModule(Name, "AceHook-3.0", "AceEvent-3.0", "AceTimer-3.0");
 
 -- Constants: Logo, Name
 Private.Logo = 'Interface\\AddOns\\XvUI\\Media\\Textures\\XvUI_Logo'
@@ -46,21 +43,14 @@ function Private:Print(msg)
 	print(Private.Name .. ': ' .. msg)
 end
 
--- This function is executed when you press "Skip Process" or "Finished" in the installer.
+-- Set install version to current XvUI version
 local function InstallComplete()
-	if GetCVarBool("Sound_EnableMusic") then
-		StopMusic()
-	end
-
-	-- Set a variable tracking the version of the addon when layout was installed
-	E.db[Name].install_version = Version
-
+	E.global.XVUI.install_version = Private.Version
 	ReloadUI()
 end
 
--- This is the data we pass on to the ElvUI Plugin Installer.
--- The Plugin Installer is reponsible for displaying the install guide for this layout.
-local InstallerData = {
+-- Installer table
+XVUI.InstallerData = {
 	Title = format("|cff0099ff%s %s|r", Name, "Installation"),
 	Name = Name,
 	-- Uncomment the line below f you have a logo you want to use, otherwise it uses the one from ElvUI
@@ -159,8 +149,8 @@ local InstallerData = {
 }
 
 -- This function holds the options table which will be inserted into the ElvUI config
-local function InsertOptions()
-	E.Options.args.Name = {
+function XVUI:Config()
+	XVUI.Options.args.Name = {
 		order = 100,
 		type = "group",
 		name = Private.Name,
@@ -200,25 +190,41 @@ local function InsertOptions()
 				type = "execute",
 				name = "Install",
 				desc = "Run the installation process.",
-				func = function() E:GetModule("PluginInstaller"):Queue(InstallerData); E:ToggleOptions(); end,
+				func = function() E:GetModule("PluginInstaller"):Queue(XVUI.InstallerData); E:ToggleOptions(); end,
 			},
 		},
 	}
 end
 
--- Create a unique table for our plugin
-P[Name] = {}
+-- Defaults: E.global.XVUI
+G.XVUI = {
+	dev = false,
+	install_version = nil,
+	scaled = false,
+}
 
--- This function will handle initialization of the addon
-function XVUI:Initialize()
-	-- Initiate installation process if ElvUI install is complete and our plugin install has not yet been run
-	if E.private.install_complete and E.db[Name].install_version == nil then
-		E:GetModule("PluginInstaller"):Queue(InstallerData)
+-- Defaults: E.private.L1UI
+V.XVUI = {}
+
+-- Defaults: E.db.XVUI
+P.XVUI = {}
+
+-- Initialize module in ElvUI
+local function Initialize()
+	if E.private.install_complete == nil then -- ElvUI installer skip
+		E.private.install_complete = E.version
 	end
 
-	-- Insert our options table when ElvUI config is loaded
-	EP:RegisterPlugin(Name, InsertOptions)
+	if E.global.XVUI.install_version == nil then -- XvUI installer queue
+		PI:Queue(XVUI.InstallerData)
+	end
+
+	EP:RegisterPlugin(Name, XVUI.Config)
+	--XVUI:RegisterEvents()
 end
 
--- Register module with callback so it gets initialized when ready
-E:RegisterModule(XVUI:GetName())
+local function CallbackInitialize()
+	Initialize()
+end
+
+E:RegisterModule(Name, CallbackInitialize)
