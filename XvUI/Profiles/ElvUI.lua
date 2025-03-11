@@ -30,9 +30,10 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["afk"] = false
 	E.db["general"]["altPowerBar"]["font"] = Private.Font
 	E.db["general"]["altPowerBar"]["statusBar"] = Private.Texture
-	--E.db["general"]["altPowerBar"]["statusBarColor"]["b"] = 0.80000007152557
-	--E.db["general"]["altPowerBar"]["statusBarColor"]["g"] = 0.40000003576279
-	--E.db["general"]["altPowerBar"]["statusBarColor"]["r"] = 0.20000001788139
+	E.db["general"]["altPowerBar"]["statusBar"] = "XvUI"
+	E.db["general"]["altPowerBar"]["statusBarColor"]["b"] = 0.80000007152557
+	E.db["general"]["altPowerBar"]["statusBarColor"]["g"] = 0.40000003576279
+	E.db["general"]["altPowerBar"]["statusBarColor"]["r"] = 0.20000001788139
 	E.db["general"]["autoRepair"] = "PLAYER"
 	E.db["general"]["backdropcolor"]["b"] = 0.2
 	E.db["general"]["backdropcolor"]["g"] = 0.2
@@ -82,9 +83,9 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["totems"]["size"] = 50
 	E.db["general"]["totems"]["sortDirection"] = "DESCENDING"
 	E.db["general"]["totems"]["spacing"] = 8
-	--E.db["general"]["valuecolor"]["b"] = 0.9215686917305
-	--E.db["general"]["valuecolor"]["g"] = 0.78039222955704
-	--E.db["general"]["valuecolor"]["r"] = 0.24705883860588
+	E.db["general"]["valuecolor"]["b"] = 0.9215686917305
+	E.db["general"]["valuecolor"]["g"] = 0.78039222955704
+	E.db["general"]["valuecolor"]["r"] = 0.24705883860588
 	
 	-- ActionBars
 	E.db["actionbar"]["bar1"]["buttonSize"] = 36
@@ -404,6 +405,9 @@ function Private:Setup_ElvUI_Profile()
 	E.db["chat"]["panelHeight"] = 200
 	E.db["chat"]["panelWidth"] = 450
 	E.db["chat"]["tabFont"] = Private.Font
+	E.db["chat"]["tabSelectorColor"]["b"] = 0.9215686917305
+	E.db["chat"]["tabSelectorColor"]["g"] = 0.78039222955704
+	E.db["chat"]["tabSelectorColor"]["r"] = 0.24705883860588
 	E.db["chat"]["timeStampFormat"] = "%H:%M "
 
 	-- Cooldown Text
