@@ -150,7 +150,7 @@ XVUI.InstallerData = {
 
 -- This function holds the options table which will be inserted into the ElvUI config
 function XVUI:Config()
-	XVUI.Options.args.Name = {
+	E.Options.args.Name = {
 		order = 100,
 		type = "group",
 		name = Private.Name,
