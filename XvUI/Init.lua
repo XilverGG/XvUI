@@ -114,6 +114,14 @@ XVUI.InstallerData = {
 			PluginInstallFrame.Option1:SetText("Setup WarpDeplete")
 		end,
 		[8] = function()
+			PluginInstallFrame.SubTitle:SetText("NameplateSCT profile")
+			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for NameplateSCT.")
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "This will overwrite your current NameplateSCT configuration."))
+			PluginInstallFrame.Option1:Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_NameplateSCT(true) end)
+			PluginInstallFrame.Option1:SetText("Setup NameplateSCT")
+		end,
+		[9] = function()
 			PluginInstallFrame.SubTitle:SetText("ActionBar Buddy (ElvUI Plugin)")
 			PluginInstallFrame.Desc1:SetText("Default XvUI configuration for ActionBar Buddy (ElvUI Plugin).")
 			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Skip this step if you have not installed this addon."))
@@ -121,7 +129,7 @@ XVUI.InstallerData = {
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_ElvUI_ABB() end)
 			PluginInstallFrame.Option1:SetText("Setup")
 		end,
-		[9] = function()
+		[10] = function()
 			PluginInstallFrame.SubTitle:SetText("Installation Complete")
 			PluginInstallFrame.Desc1:SetText("You have completed the installation process.")
 			PluginInstallFrame.Desc2:SetText("Please click the button below in order to finalize the process and automatically reload your UI.")
@@ -138,8 +146,9 @@ XVUI.InstallerData = {
 		[5] = "Details",
 		[6] = "OmniCD",
 		[7] = "WarpDeplete",
-		[8] = "ActionBar Buddy",
-		[9] = "Installation Complete"
+		[8] = "NameplateSCT",
+		[9] = "ActionBar Buddy",
+		[10] = "Installation Complete"
 	},
 	StepTitlesColor = {1, 1, 1},
 	StepTitlesColorSelected = {0, 179/255, 1},

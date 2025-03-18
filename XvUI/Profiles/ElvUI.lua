@@ -445,6 +445,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["tooltip"]["headerFont"] = Private.Font
 	E.db["tooltip"]["headerFontSize"] = 12
 	E.db["tooltip"]["healthBar"]["font"] = Private.Font
+	E.db["tooltip"]["healthBar"]["fontOutline"] = "SHADOW"
 	E.db["tooltip"]["itemQuality"] = true
 	E.db["tooltip"]["modifierID"] = "SHIFT"
 	E.db["tooltip"]["mythicDataEnable"] = false
