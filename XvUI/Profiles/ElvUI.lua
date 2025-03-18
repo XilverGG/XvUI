@@ -66,7 +66,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["itemLevel"]["totalLevelFontOutline"] = "SHADOW"
 	E.db["general"]["itemLevel"]["totalLevelFontSize"] = 18
 	E.db["general"]["lootRoll"]["nameFont"] = Private.Font
-	E.db["general"]["lootRoll"]["statusBarTexture"] = "XvUI"
+	E.db["general"]["lootRoll"]["statusBarTexture"] = Private.Texture
 	E.db["general"]["minimap"]["icons"]["calendar"]["scale"] = 1
 	E.db["general"]["minimap"]["icons"]["calendar"]["xOffset"] = 3
 	E.db["general"]["minimap"]["icons"]["calendar"]["yOffset"] = -3
@@ -74,7 +74,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["minimap"]["icons"]["crafting"]["xOffset"] = 3
 	E.db["general"]["minimap"]["icons"]["mail"]["xOffset"] = -5
 	E.db["general"]["minimap"]["icons"]["mail"]["yOffset"] = 0
-	E.db["general"]["minimap"]["locationFont"] = "XvUI"
+	E.db["general"]["minimap"]["locationFont"] = Private.Font
 	E.db["general"]["minimap"]["locationFontOutline"] = "SHADOW"
 	E.db["general"]["minimap"]["size"] = 220
 	E.db["general"]["minimap"]["timeFont"] = Private.Font
@@ -451,6 +451,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["tooltip"]["role"] = false
 	E.db["tooltip"]["targetInfo"] = false
 
+	-- UnitFrames
 	E.db["unitframe"]["colors"]["auraBarBuff"]["b"] = 0.7294117808342
 	E.db["unitframe"]["colors"]["auraBarBuff"]["g"] = 0.54901963472366
 	E.db["unitframe"]["colors"]["auraBarBuff"]["r"] = 0.95686280727386
@@ -475,23 +476,25 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["colors"]["power"]["RAGE"]["b"] = 0.32156863808632
 	E.db["unitframe"]["colors"]["power"]["RAGE"]["g"] = 0.32156863808632
 	E.db["unitframe"]["colors"]["power"]["RAGE"]["r"] = 1
-	E.db["unitframe"]["font"] = "XvUI"
+
+	E.db["unitframe"]["font"] = Private.Font
 	E.db["unitframe"]["fontOutline"] = "SHADOW"
 	E.db["unitframe"]["fontSize"] = 16
 	E.db["unitframe"]["maxAllowedGroups"] = false
-	E.db["unitframe"]["statusbar"] = "XvUI"
-	E.db["unitframe"]["units"]["arena"]["buffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["statusbar"] = Private.Font
+
+	E.db["unitframe"]["units"]["arena"]["buffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["arena"]["buffs"]["xOffset"] = -5
 	E.db["unitframe"]["units"]["arena"]["castbar"]["customTextFont"]["enable"] = true
-	E.db["unitframe"]["units"]["arena"]["castbar"]["customTextFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["arena"]["castbar"]["customTextFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["arena"]["castbar"]["customTextFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["arena"]["castbar"]["customTimeFont"]["enable"] = true
-	E.db["unitframe"]["units"]["arena"]["castbar"]["customTimeFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["arena"]["castbar"]["customTimeFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["arena"]["castbar"]["customTimeFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["arena"]["castbar"]["height"] = 25
 	E.db["unitframe"]["units"]["arena"]["castbar"]["positionsGroup"]["yOffset"] = -20
 	E.db["unitframe"]["units"]["arena"]["castbar"]["width"] = 200
-	E.db["unitframe"]["units"]["arena"]["debuffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["arena"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["arena"]["debuffs"]["priority"] = "Blacklist,Boss,RaidDebuffs,Personal,CCDebuffs,Whitelist"
 	E.db["unitframe"]["units"]["arena"]["debuffs"]["xOffset"] = -5
 	E.db["unitframe"]["units"]["arena"]["healPrediction"]["absorbStyle"] = "WRAPPED"
@@ -518,7 +521,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["arena"]["spacing"] = 50
 	E.db["unitframe"]["units"]["arena"]["width"] = 200
 	E.db["unitframe"]["units"]["assist"]["enable"] = false
-	E.db["unitframe"]["units"]["boss"]["buffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["boss"]["buffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["boss"]["buffs"]["maxDuration"] = 300
 	E.db["unitframe"]["units"]["boss"]["buffs"]["perrow"] = 6
 	E.db["unitframe"]["units"]["boss"]["buffs"]["sizeOverride"] = 0
@@ -526,15 +529,15 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["boss"]["buffs"]["xOffset"] = -5
 	E.db["unitframe"]["units"]["boss"]["buffs"]["yOffset"] = 0
 	E.db["unitframe"]["units"]["boss"]["castbar"]["customTextFont"]["enable"] = true
-	E.db["unitframe"]["units"]["boss"]["castbar"]["customTextFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["boss"]["castbar"]["customTextFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["boss"]["castbar"]["customTextFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["boss"]["castbar"]["customTimeFont"]["enable"] = true
-	E.db["unitframe"]["units"]["boss"]["castbar"]["customTimeFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["boss"]["castbar"]["customTimeFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["boss"]["castbar"]["customTimeFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["boss"]["castbar"]["enable"] = false
 	E.db["unitframe"]["units"]["boss"]["castbar"]["height"] = 25
 	E.db["unitframe"]["units"]["boss"]["castbar"]["width"] = 200
-	E.db["unitframe"]["units"]["boss"]["debuffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["boss"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["boss"]["debuffs"]["enable"] = false
 	E.db["unitframe"]["units"]["boss"]["debuffs"]["maxDuration"] = 300
 	E.db["unitframe"]["units"]["boss"]["debuffs"]["sizeOverride"] = 27
@@ -561,14 +564,14 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["boss"]["width"] = 200
 	E.db["unitframe"]["units"]["focus"]["aurabar"]["detachedWidth"] = 270
 	E.db["unitframe"]["units"]["focus"]["aurabar"]["maxBars"] = 6
-	E.db["unitframe"]["units"]["focus"]["buffIndicator"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["focus"]["buffIndicator"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["focus"]["buffIndicator"]["enable"] = true
 	E.db["unitframe"]["units"]["focus"]["buffIndicator"]["size"] = 10
 	E.db["unitframe"]["units"]["focus"]["buffs"]["priority"] = "Blacklist,Personal,PlayerBuffs,Dispellable"
-	E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["fontStyle"] = "SHADOW"
-	E.db["unitframe"]["units"]["focus"]["castbar"]["customTimeFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["focus"]["castbar"]["customTimeFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["focus"]["castbar"]["customTimeFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["focus"]["castbar"]["customTimeFont"]["fontStyle"] = "SHADOW"
 	E.db["unitframe"]["units"]["focus"]["castbar"]["enable"] = false
@@ -611,13 +614,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["focustarget"]["raidicon"]["yOffset"] = 0
 	E.db["unitframe"]["units"]["focustarget"]["threatStyle"] = "GLOW"
 	E.db["unitframe"]["units"]["focustarget"]["width"] = 250
-	E.db["unitframe"]["units"]["party"]["buffIndicator"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["party"]["buffIndicator"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["party"]["buffIndicator"]["size"] = 10
-	E.db["unitframe"]["units"]["party"]["buffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["party"]["buffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["party"]["buffs"]["perrow"] = 6
 	E.db["unitframe"]["units"]["party"]["buffs"]["priority"] = "Blacklist,TurtleBuffs,PlayerBuffs"
 	E.db["unitframe"]["units"]["party"]["buffs"]["xOffset"] = -5
-	E.db["unitframe"]["units"]["party"]["debuffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["party"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["party"]["debuffs"]["perrow"] = 6
 	E.db["unitframe"]["units"]["party"]["debuffs"]["sizeOverride"] = 0
 	E.db["unitframe"]["units"]["party"]["debuffs"]["spacing"] = -1
@@ -645,7 +648,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["party"]["power"]["yOffset"] = -20
 	E.db["unitframe"]["units"]["party"]["raidRoleIcons"]["xOffset"] = 6
 	E.db["unitframe"]["units"]["party"]["raidRoleIcons"]["yOffset"] = 3
-	E.db["unitframe"]["units"]["party"]["rdebuffs"]["font"] = "XvUI"
+	E.db["unitframe"]["units"]["party"]["rdebuffs"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["party"]["rdebuffs"]["size"] = 24
 	E.db["unitframe"]["units"]["party"]["rdebuffs"]["yOffset"] = 12
 	E.db["unitframe"]["units"]["party"]["readycheckIcon"]["position"] = "CENTER"
@@ -676,7 +679,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["pet"]["castbar"]["width"] = 405
 	E.db["unitframe"]["units"]["pet"]["debuffs"]["anchorPoint"] = "RIGHT"
 	E.db["unitframe"]["units"]["pet"]["debuffs"]["attachTo"] = "BUFFS"
-	E.db["unitframe"]["units"]["pet"]["debuffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["pet"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["pet"]["debuffs"]["growthX"] = "RIGHT"
 	E.db["unitframe"]["units"]["pet"]["debuffs"]["maxDuration"] = 0
 	E.db["unitframe"]["units"]["pet"]["debuffs"]["perrow"] = 4
@@ -714,7 +717,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["player"]["aurabar"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["buffs"]["anchorPoint"] = "TOPRIGHT"
 	E.db["unitframe"]["units"]["player"]["buffs"]["attachTo"] = "FRAME"
-	E.db["unitframe"]["units"]["player"]["buffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["player"]["buffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["player"]["buffs"]["enable"] = true
 	E.db["unitframe"]["units"]["player"]["buffs"]["growthX"] = "LEFT"
 	E.db["unitframe"]["units"]["player"]["buffs"]["height"] = 24
@@ -735,11 +738,12 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["frameLevel"] = 2
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["frameStrata"] = "MEDIUM"
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["useCustomStrata"] = true
+	
 	E.db["unitframe"]["units"]["player"]["customTexts"] = {}
-	E.db["unitframe"]["units"]["player"]["customTexts"]["Absorb"] = {
+	E.db["unitframe"]["units"]["player"]["customTexts"]["XvUI_Absorb"] = {
 		["attachTextTo"] = "Health",
 		["enable"] = true,
-		["font"] = "FRIZQT__",
+		["font"] = Private.Font,
 		["fontOutline"] = "SHADOW",
 		["justifyH"] = "RIGHT",
 		["size"] = 16,
@@ -749,7 +753,7 @@ function Private:Setup_ElvUI_Profile()
 	}
 	E.db["unitframe"]["units"]["player"]["debuffs"]["anchorPoint"] = "TOPRIGHT"
 	E.db["unitframe"]["units"]["player"]["debuffs"]["attachTo"] = "BUFFS"
-	E.db["unitframe"]["units"]["player"]["debuffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["player"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["player"]["debuffs"]["growthX"] = "LEFT"
 	E.db["unitframe"]["units"]["player"]["debuffs"]["height"] = 24
 	E.db["unitframe"]["units"]["player"]["debuffs"]["spacing"] = 0
@@ -783,7 +787,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["player"]["width"] = 250
 	E.db["unitframe"]["units"]["raid1"]["ROLE1"] = "HEALER"
 	E.db["unitframe"]["units"]["raid1"]["ROLE2"] = "TANK"
-	E.db["unitframe"]["units"]["raid1"]["buffIndicator"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["raid1"]["buffIndicator"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["raid1"]["groupBy"] = "ROLE"
 	E.db["unitframe"]["units"]["raid1"]["growthDirection"] = "LEFT_UP"
 	E.db["unitframe"]["units"]["raid1"]["healPrediction"]["absorbStyle"] = "WRAPPED"
@@ -796,7 +800,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["raid1"]["power"]["width"] = "spaced"
 	E.db["unitframe"]["units"]["raid1"]["raidRoleIcons"]["xOffset"] = 6
 	E.db["unitframe"]["units"]["raid1"]["raidRoleIcons"]["yOffset"] = 3
-	E.db["unitframe"]["units"]["raid1"]["rdebuffs"]["font"] = "XvUI"
+	E.db["unitframe"]["units"]["raid1"]["rdebuffs"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["raid1"]["rdebuffs"]["size"] = 24
 	E.db["unitframe"]["units"]["raid1"]["rdebuffs"]["yOffset"] = 10
 	E.db["unitframe"]["units"]["raid1"]["readycheckIcon"]["position"] = "CENTER"
@@ -825,7 +829,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["raid2"]["raidRoleIcons"]["xOffset"] = 6
 	E.db["unitframe"]["units"]["raid2"]["raidRoleIcons"]["yOffset"] = 3
 	E.db["unitframe"]["units"]["raid2"]["rdebuffs"]["enable"] = true
-	E.db["unitframe"]["units"]["raid2"]["rdebuffs"]["font"] = "XvUI"
+	E.db["unitframe"]["units"]["raid2"]["rdebuffs"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["raid2"]["rdebuffs"]["size"] = 24
 	E.db["unitframe"]["units"]["raid2"]["rdebuffs"]["yOffset"] = 10
 	E.db["unitframe"]["units"]["raid2"]["readycheckIcon"]["position"] = "CENTER"
@@ -843,30 +847,30 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["raid3"]["height"] = 30
 	E.db["unitframe"]["units"]["raid3"]["name"]["text_format"] = "[name:short:status]"
 	E.db["unitframe"]["units"]["raid3"]["orientation"] = "RIGHT"
-	E.db["unitframe"]["units"]["raid3"]["rdebuffs"]["font"] = "XvUI"
+	E.db["unitframe"]["units"]["raid3"]["rdebuffs"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["tank"]["buffIndicator"]["enable"] = true
 	E.db["unitframe"]["units"]["tank"]["height"] = 38
 	E.db["unitframe"]["units"]["tank"]["name"]["text_format"] = "[name:short:status]"
 	E.db["unitframe"]["units"]["tank"]["orientation"] = "RIGHT"
-	E.db["unitframe"]["units"]["tank"]["rdebuffs"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["tank"]["rdebuffs"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["tank"]["rdebuffs"]["yOffset"] = 7
 	E.db["unitframe"]["units"]["tank"]["targetsGroup"]["enable"] = false
 	E.db["unitframe"]["units"]["tank"]["targetsGroup"]["height"] = 40
 	E.db["unitframe"]["units"]["tank"]["targetsGroup"]["name"]["text_format"] = "[name:short:status]"
 	E.db["unitframe"]["units"]["tank"]["targetsGroup"]["width"] = 100
 	E.db["unitframe"]["units"]["tank"]["targetsGroup"]["xOffset"] = 5
-	E.db["unitframe"]["units"]["tank"]["verticalSpacing"] = 3
+	E.db["unitframe"]["units"]["tank"]["verticalSpacing"] = 5
 	E.db["unitframe"]["units"]["tank"]["width"] = 100
 	E.db["unitframe"]["units"]["target"]["aurabar"]["enable"] = false
 	E.db["unitframe"]["units"]["target"]["buffIndicator"]["size"] = 16
 	E.db["unitframe"]["units"]["target"]["buffs"]["anchorPoint"] = "TOPLEFT"
-	E.db["unitframe"]["units"]["target"]["buffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["target"]["buffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["target"]["buffs"]["growthX"] = "RIGHT"
 	E.db["unitframe"]["units"]["target"]["buffs"]["height"] = 24
-	E.db["unitframe"]["units"]["target"]["castbar"]["customTextFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["target"]["castbar"]["customTextFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["target"]["castbar"]["customTextFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["target"]["castbar"]["customTextFont"]["fontStyle"] = "SHADOW"
-	E.db["unitframe"]["units"]["target"]["castbar"]["customTimeFont"]["font"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["target"]["castbar"]["customTimeFont"]["font"] = Private.Font
 	E.db["unitframe"]["units"]["target"]["castbar"]["customTimeFont"]["fontSize"] = 14
 	E.db["unitframe"]["units"]["target"]["castbar"]["customTimeFont"]["fontStyle"] = "SHADOW"
 	E.db["unitframe"]["units"]["target"]["castbar"]["height"] = 25
@@ -876,7 +880,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["target"]["castbar"]["textColor"]["r"] = 1
 	E.db["unitframe"]["units"]["target"]["castbar"]["width"] = 250
 	E.db["unitframe"]["units"]["target"]["debuffs"]["anchorPoint"] = "TOPLEFT"
-	E.db["unitframe"]["units"]["target"]["debuffs"]["countFont"] = "Friz Quadrata TT"
+	E.db["unitframe"]["units"]["target"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["target"]["debuffs"]["growthX"] = "RIGHT"
 	E.db["unitframe"]["units"]["target"]["debuffs"]["height"] = 24
 	E.db["unitframe"]["units"]["target"]["debuffs"]["maxDuration"] = 0
@@ -926,12 +930,11 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["targettarget"]["width"] = 135
 
 	E.db["movers"]["AddonCompartmentMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-225,-225"
-	E.db["movers"]["AlertFrameMover"] = "TOP,ElvUIParent,TOP,0,-20"
+	E.db["movers"]["AltPowerBarMover"] = "TOP,ElvUIParent,TOP,0,-150"
 	E.db["movers"]["ArenaHeaderMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-254,-275"
 	E.db["movers"]["AzeriteBarMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-2,-245"
 	E.db["movers"]["BNETMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-4,-274"
 	E.db["movers"]["BelowMinimapContainerMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-4,-274"
-	E.db["movers"]["BossBannerMover"] = "TOP,ElvUIParent,TOP,0,-125"
 	E.db["movers"]["BossButton"] = "BOTTOM,UIParent,BOTTOM,0,100"
 	E.db["movers"]["BossHeaderMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-254,-274"
 	E.db["movers"]["BuffsMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-250,-2"
@@ -963,13 +966,12 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["ElvUF_Raid1Mover"] = "TOPLEFT,ElvUIParent,TOPLEFT,250,-413"
 	E.db["movers"]["ElvUF_Raid2Mover"] = "BOTTOMLEFT,UIParent,BOTTOMLEFT,190,450"
 	E.db["movers"]["ElvUF_Raid3Mover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,43,230"
-	E.db["movers"]["ElvUF_TankMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,600,-413"
+	E.db["movers"]["ElvUF_TankMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,558,-413"
 	E.db["movers"]["ElvUF_TargetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,330,290"
 	E.db["movers"]["ElvUF_TargetMover"] = "BOTTOM,ElvUIParent,BOTTOM,330,340"
 	E.db["movers"]["ElvUF_TargetTargetMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-470,340"
 	E.db["movers"]["ElvUIBagMover"] = "BOTTOMRIGHT,RightChatPanel,BOTTOMRIGHT,0,26"
 	E.db["movers"]["ElvUIBankMover"] = "BOTTOMLEFT,LeftChatPanel,BOTTOMLEFT,0,26"
-	E.db["movers"]["EventToastMover"] = "TOP,ElvUIParent,TOP,0,-150"
 	E.db["movers"]["ExperienceBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,5"
 	E.db["movers"]["GMMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,250,-5"
 	E.db["movers"]["HonorBarMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-2,-251"
@@ -994,7 +996,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["SocialMenuMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,4,-187"
 	E.db["movers"]["TargetPowerBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-620,337"
 	E.db["movers"]["ThreatBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-4,4"
-	E.db["movers"]["TopCenterContainerMover"] = "TOP,ElvUIParent,TOP,0,-60"
+	E.db["movers"]["TopCenterContainerMover"] = "TOP,ElvUIParent,TOP,0,-35"
 	E.db["movers"]["TotemTrackerMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,485,163"
 	E.db["movers"]["VOICECHAT"] = "TOPLEFT,ElvUIParent,TOPLEFT,250,-82"
 	E.db["movers"]["VehicleLeaveButton"] = "BOTTOM,ElvUIParent,BOTTOM,0,110"
@@ -1023,17 +1025,17 @@ function Private:Setup_ElvUI_PrivateDB()
 	E.private["nameplates"]["enable"] = false
 	E.private["install_complete"] = E.version
 	
-	E.private["general"]["chatBubbleFont"] = "Friz Quadrata TT"
+	E.private["general"]["chatBubbleFont"] = Private.Font
 	E.private["general"]["chatBubbles"] = "disabled"
-	E.private["general"]["dmgfont"] = "Friz Quadrata TT"
-	E.private["general"]["glossTex"] = "XvUI"
+	E.private["general"]["dmgfont"] = Private.Font
+	E.private["general"]["glossTex"] = Private.Texture
 	E.private["general"]["loot"] = false
 	E.private["general"]["lootRoll"] = false
-	E.private["general"]["namefont"] = "Friz Quadrata TT"
-	E.private["general"]["nameplateFont"] = "Friz Quadrata TT"
-	E.private["general"]["nameplateLargeFont"] = "Friz Quadrata TT"
+	E.private["general"]["namefont"] = Private.Font
+	E.private["general"]["nameplateFont"] = Private.Font
+	E.private["general"]["nameplateLargeFont"] = Private.Font
 	E.private["general"]["nameplateLargeFontSize"] = 12
-	E.private["general"]["normTex"] = "XvUI"
+	E.private["general"]["normTex"] = Private.Texture
 	E.private["general"]["replaceBlizzFonts"] = false
 	E.private["general"]["replaceCombatFont"] = false
 	E.private["general"]["replaceNameFont"] = false
@@ -1063,6 +1065,7 @@ function Private:Setup_ElvUI_PrivateDB()
 	E.private["skins"]["blizzard"]["blizzardOptions"] = false
 	E.private["skins"]["blizzard"]["bmah"] = false
 	E.private["skins"]["blizzard"]["calendar"] = false
+	E.private["skins"]["blizzard"]["campsites"] = false
 	E.private["skins"]["blizzard"]["channels"] = false
 	E.private["skins"]["blizzard"]["character"] = false
 	E.private["skins"]["blizzard"]["chromieTime"] = false
@@ -1212,7 +1215,7 @@ function Private:Setup_ElvUI_WeakAuras()
 	if not E:IsAddOnEnabled('WeakAuras') then Private:Print('WeakAuras ' .. 'is not installed or enabled.') return end
 	
 	E.db["WeakAuras"]["cooldown"]["fonts"]["enable"] = true
-	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = "Friz Quadrata TT"
+	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = Private.Font
 	E.db["WeakAuras"]["cooldown"]["fonts"]["fontSize"] = 16
 	E.db["WeakAuras"]["cooldown"]["hideBlizzard"] = true
 end
