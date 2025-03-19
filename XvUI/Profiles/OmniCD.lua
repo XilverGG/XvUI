@@ -11,6 +11,7 @@ local E, L = unpack(ElvUI)
 OmniCD profile
 LC: 09/03/2025
 ]]
+
 function Private:Setup_OmniCD(installer)
 	if not E:IsAddOnEnabled('OmniCD') then Private:Print('OmniCD ' .. 'is not installed or enabled.') return end
 

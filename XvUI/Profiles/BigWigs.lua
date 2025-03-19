@@ -8,9 +8,10 @@ local _, Private = ...
 local E, L = unpack(ElvUI)
 
 --[[
-	BigWigs profiles
-	LC: 09/03/2025
+BigWigs profiles
+LC: 10/03/2025
 ]]
+
 function Private:Setup_BigWigs()
 	if not E:IsAddOnEnabled('BigWigs') then Private:Print('BigWigs ' .. 'is not installed or enabled.') return end
 

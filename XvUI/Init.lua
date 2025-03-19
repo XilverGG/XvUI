@@ -200,8 +200,8 @@ function XVUI:Config()
 				name = "Install",
 				desc = "Run the installation process.",
 				func = function() E:GetModule("PluginInstaller"):Queue(XVUI.InstallerData); E:ToggleOptions(); end,
-			},
-		},
+			}
+		}
 	}
 end
 

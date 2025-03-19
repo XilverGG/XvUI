@@ -11,7 +11,7 @@ function Private:Setup_ElvUI()
 	Private:Setup_ElvUI_Profile()
 	Private:Setup_ElvUI_PrivateDB()
 	Private:Setup_ElvUI_GlobalDB()
-	
+
 	Private:Setup_ElvUI_WeakAuras()
 
 	-- Update ElvUI
@@ -23,7 +23,7 @@ function Private:Setup_ElvUI()
 end
 
 function Private:Setup_ElvUI_Profile()
-	
+
 	E.data:SetProfile('XvUI')
 	-- AB conversion
 	E.db["convertPages"] = true
@@ -92,7 +92,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["valuecolor"]["b"] = 0.9215686917305
 	E.db["general"]["valuecolor"]["g"] = 0.78039222955704
 	E.db["general"]["valuecolor"]["r"] = 0.24705883860588
-	
+
 	-- ActionBars
 	E.db["actionbar"]["bar1"]["buttonSize"] = 36
 	E.db["actionbar"]["bar1"]["buttonSpacing"] = 5
@@ -256,7 +256,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar10"]["macrotext"] = true
 	E.db["actionbar"]["bar10"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar10"]["macroTextYOffset"] = 0
-	
+
 	E.db["actionbar"]["bar13"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar13"]["buttonSize"] = 36
 	E.db["actionbar"]["bar13"]["buttonSpacing"] = 5
@@ -309,7 +309,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar15"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar15"]["macroTextYOffset"] = 0
 	E.db["actionbar"]["bar15"]["point"] = "TOPLEFT"
-	
+
 	E.db["actionbar"]["barPet"]["backdrop"] = false
 	E.db["actionbar"]["barPet"]["buttonsPerRow"] = 10
 	E.db["actionbar"]["barPet"]["buttonSize"] = 36
@@ -367,7 +367,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["auras"]["debuffs"]["timeFont"] = Private.Font
 	E.db["auras"]["debuffs"]["timeFontOutline"] = Private.Outline
 	E.db["auras"]["debuffs"]["timeFontSize"] = 12
-	
+
 	-- Bags
 	E.db["bags"]["autoToggle"]["guildBank"] = true
 	E.db["bags"]["bagButtonSpacing"] = 3
@@ -739,7 +739,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["frameLevel"] = 2
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["frameStrata"] = "MEDIUM"
 	E.db["unitframe"]["units"]["player"]["classbar"]["strataAndLevel"]["useCustomStrata"] = true
-	
+
 	E.db["unitframe"]["units"]["player"]["customTexts"] = {}
 	E.db["unitframe"]["units"]["player"]["customTexts"]["XvUI_Absorb"] = {
 		["attachTextTo"] = "Health",
@@ -1013,19 +1013,19 @@ function Private:Setup_ElvUI_GlobalDB()
 end
 
 function Private:Setup_ElvUI_PrivateDB()
-	
+
 	local isBagsEnabled = true
-	
+
 	local BAG_ADDONS = { "Bagnon", "BetterBags", "Baggins", "Sorted", "Inventorian", "Baganator", "ArkInventory", "OneBag3", "Combuctor" }
-	
+
 	for _, addon in ipairs(BAG_ADDONS) do
 		if E:IsAddOnEnabled(addon) then isBagsEnabled = false end
 	end
-	
+
 	E.private["bags"]["enable"] = isBagsEnabled
 	E.private["nameplates"]["enable"] = false
 	E.private["install_complete"] = E.version
-	
+
 	E.private["general"]["chatBubbleFont"] = Private.Font
 	E.private["general"]["chatBubbles"] = "disabled"
 	E.private["general"]["dmgfont"] = Private.Font
@@ -1042,7 +1042,7 @@ function Private:Setup_ElvUI_PrivateDB()
 	E.private["general"]["replaceNameFont"] = false
 	E.private["general"]["replaceNameplateFont"] = false
 	E.private["general"]["worldMap"] = false
-	
+
 	E.private["skins"]["blizzard"]["achievement"] = false
 	E.private["skins"]["blizzard"]["addonManager"] = false
 	E.private["skins"]["blizzard"]["adventureMap"] = false
@@ -1147,13 +1147,13 @@ function Private:Setup_ElvUI_PrivateDB()
 	E.private["skins"]["blizzard"]["weeklyRewards"] = false
 	E.private["skins"]["blizzard"]["worldmap"] = false
 	E.private["skins"]["parchmentRemoverEnable"] = true
-	
+
 	E.private["theme"] = "class"
 end
 
 function Private:Setup_ElvUI_ABB()
 	if not E:IsAddOnEnabled('ElvUI_ActionBarBuddy') then Private:Print('ElvUI_ActionBarBuddy ' .. 'is not installed or enabled.') return end
-	
+
 	E.db["abb"]["bar1"]["customTriggers"] = true
 	E.db["abb"]["bar1"]["displayTriggers"]["hasFocus"] = false
 	E.db["abb"]["bar1"]["displayTriggers"]["hasTarget"] = false
@@ -1214,7 +1214,7 @@ end
 
 function Private:Setup_ElvUI_WeakAuras()
 	if not E:IsAddOnEnabled('WeakAuras') then Private:Print('WeakAuras ' .. 'is not installed or enabled.') return end
-	
+
 	E.db["WeakAuras"]["cooldown"]["fonts"]["enable"] = true
 	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = Private.Font
 	E.db["WeakAuras"]["cooldown"]["fonts"]["fontSize"] = 16
