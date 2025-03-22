@@ -172,7 +172,7 @@ G.XVUI = {
 	scaled = false,
 }
 
--- Defaults: E.private.L1UI
+-- Defaults: E.private.XVUI
 V.XVUI = {}
 
 -- Defaults: E.db.XVUI
