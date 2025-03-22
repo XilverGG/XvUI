@@ -1,5 +1,6 @@
 <Ui>
 	<Script file='ElvUI.lua'/>
+	<Script file='ElvUI_ActionBarBuddy.lua'/>
 	<Script file='Plater.lua'/>
 	<Script file='Details.lua'/>
 	<Script file='BigWigs.lua'/>

@@ -22,6 +22,165 @@ function Private:Setup_ElvUI()
 	PluginInstallStepComplete:Show()
 end
 
+-- GlobalDB
+function Private:Setup_ElvUI_GlobalDB()
+	E.global["general"]["WorldMapCoordinates"]["position"] = "BOTTOMRIGHT"
+	E.global["general"]["commandBarSetting"] = "DISABLED"
+	E.global["general"]["fadeMapWhenMoving"] = false
+	E.global["general"]["smallerWorldMap"] = false
+end
+
+-- PrivateDB
+function Private:Setup_ElvUI_PrivateDB()
+
+	local isBagsEnabled = true
+
+	local BAG_ADDONS = { "Bagnon", "BetterBags", "Baggins", "Sorted", "Inventorian", "Baganator", "ArkInventory", "OneBag3", "Combuctor" }
+
+	for _, addon in ipairs(BAG_ADDONS) do
+		if E:IsAddOnEnabled(addon) then isBagsEnabled = false end
+	end
+
+	E.private["bags"]["enable"] = isBagsEnabled
+	E.private["nameplates"]["enable"] = false
+	E.private["install_complete"] = E.version
+
+	E.private["general"]["chatBubbleFont"] = Private.Font
+	E.private["general"]["chatBubbles"] = "disabled"
+	E.private["general"]["dmgfont"] = Private.Font
+	E.private["general"]["glossTex"] = Private.Texture
+	E.private["general"]["loot"] = false
+	E.private["general"]["lootRoll"] = false
+	E.private["general"]["namefont"] = Private.Font
+	E.private["general"]["nameplateFont"] = Private.Font
+	E.private["general"]["nameplateLargeFont"] = Private.Font
+	E.private["general"]["nameplateLargeFontSize"] = 12
+	E.private["general"]["normTex"] = Private.Texture
+	E.private["general"]["replaceBlizzFonts"] = false
+	E.private["general"]["replaceCombatFont"] = false
+	E.private["general"]["replaceNameFont"] = false
+	E.private["general"]["replaceNameplateFont"] = false
+	E.private["general"]["worldMap"] = false
+
+	E.private["skins"]["blizzard"]["achievement"] = false
+	E.private["skins"]["blizzard"]["addonManager"] = false
+	E.private["skins"]["blizzard"]["adventureMap"] = false
+	E.private["skins"]["blizzard"]["alertframes"] = false
+	E.private["skins"]["blizzard"]["alliedRaces"] = false
+	E.private["skins"]["blizzard"]["animaDiversion"] = false
+	E.private["skins"]["blizzard"]["archaeology"] = false
+	E.private["skins"]["blizzard"]["arena"] = false
+	E.private["skins"]["blizzard"]["arenaRegistrar"] = false
+	E.private["skins"]["blizzard"]["artifact"] = false
+	E.private["skins"]["blizzard"]["auctionhouse"] = false
+	E.private["skins"]["blizzard"]["azerite"] = false
+	E.private["skins"]["blizzard"]["azeriteEssence"] = false
+	E.private["skins"]["blizzard"]["azeriteRespec"] = false
+	E.private["skins"]["blizzard"]["bags"] = false
+	E.private["skins"]["blizzard"]["barber"] = false
+	E.private["skins"]["blizzard"]["battlefield"] = false
+	E.private["skins"]["blizzard"]["bgmap"] = false
+	E.private["skins"]["blizzard"]["bgscore"] = false
+	E.private["skins"]["blizzard"]["binding"] = false
+	E.private["skins"]["blizzard"]["blizzardOptions"] = false
+	E.private["skins"]["blizzard"]["bmah"] = false
+	E.private["skins"]["blizzard"]["calendar"] = false
+	E.private["skins"]["blizzard"]["campsites"] = false
+	E.private["skins"]["blizzard"]["channels"] = false
+	E.private["skins"]["blizzard"]["character"] = false
+	E.private["skins"]["blizzard"]["chromieTime"] = false
+	E.private["skins"]["blizzard"]["collections"] = false
+	E.private["skins"]["blizzard"]["communities"] = false
+	E.private["skins"]["blizzard"]["contribution"] = false
+	E.private["skins"]["blizzard"]["covenantPreview"] = false
+	E.private["skins"]["blizzard"]["covenantRenown"] = false
+	E.private["skins"]["blizzard"]["covenantSanctum"] = false
+	E.private["skins"]["blizzard"]["craft"] = false
+	E.private["skins"]["blizzard"]["deathRecap"] = false
+	E.private["skins"]["blizzard"]["debug"] = false
+	E.private["skins"]["blizzard"]["dressingroom"] = false
+	E.private["skins"]["blizzard"]["editor"] = false
+	E.private["skins"]["blizzard"]["encounterjournal"] = false
+	E.private["skins"]["blizzard"]["engraving"] = false
+	E.private["skins"]["blizzard"]["eventLog"] = false
+	E.private["skins"]["blizzard"]["expansionLanding"] = false
+	E.private["skins"]["blizzard"]["friends"] = false
+	E.private["skins"]["blizzard"]["garrison"] = false
+	E.private["skins"]["blizzard"]["gbank"] = false
+	E.private["skins"]["blizzard"]["genericTrait"] = false
+	E.private["skins"]["blizzard"]["gmChat"] = false
+	E.private["skins"]["blizzard"]["gossip"] = false
+	E.private["skins"]["blizzard"]["greeting"] = false
+	E.private["skins"]["blizzard"]["guide"] = false
+	E.private["skins"]["blizzard"]["guild"] = false
+	E.private["skins"]["blizzard"]["guildBank"] = false
+	E.private["skins"]["blizzard"]["guildcontrol"] = false
+	E.private["skins"]["blizzard"]["guildregistrar"] = false
+	E.private["skins"]["blizzard"]["help"] = false
+	E.private["skins"]["blizzard"]["inspect"] = false
+	E.private["skins"]["blizzard"]["islandQueue"] = false
+	E.private["skins"]["blizzard"]["islandsPartyPose"] = false
+	E.private["skins"]["blizzard"]["itemInteraction"] = false
+	E.private["skins"]["blizzard"]["itemUpgrade"] = false
+	E.private["skins"]["blizzard"]["lfg"] = false
+	E.private["skins"]["blizzard"]["lfguild"] = false
+	E.private["skins"]["blizzard"]["loot"] = false
+	E.private["skins"]["blizzard"]["losscontrol"] = false
+	E.private["skins"]["blizzard"]["macro"] = false
+	E.private["skins"]["blizzard"]["mail"] = false
+	E.private["skins"]["blizzard"]["majorFactions"] = false
+	E.private["skins"]["blizzard"]["merchant"] = false
+	E.private["skins"]["blizzard"]["mirrorTimers"] = false
+	E.private["skins"]["blizzard"]["misc"] = false
+	E.private["skins"]["blizzard"]["nonraid"] = false
+	E.private["skins"]["blizzard"]["obliterum"] = false
+	E.private["skins"]["blizzard"]["orderhall"] = false
+	E.private["skins"]["blizzard"]["perks"] = false
+	E.private["skins"]["blizzard"]["petbattleui"] = false
+	E.private["skins"]["blizzard"]["petition"] = false
+	E.private["skins"]["blizzard"]["playerChoice"] = false
+	E.private["skins"]["blizzard"]["pvp"] = false
+	E.private["skins"]["blizzard"]["quest"] = false
+	E.private["skins"]["blizzard"]["questChoice"] = false
+	E.private["skins"]["blizzard"]["raid"] = false
+	E.private["skins"]["blizzard"]["reforge"] = false
+	E.private["skins"]["blizzard"]["runeforge"] = false
+	E.private["skins"]["blizzard"]["scrapping"] = false
+	E.private["skins"]["blizzard"]["socket"] = false
+	E.private["skins"]["blizzard"]["soulbinds"] = false
+	E.private["skins"]["blizzard"]["spellbook"] = false
+	E.private["skins"]["blizzard"]["stable"] = false
+	E.private["skins"]["blizzard"]["subscriptionInterstitial"] = false
+	E.private["skins"]["blizzard"]["tabard"] = false
+	E.private["skins"]["blizzard"]["talent"] = false
+	E.private["skins"]["blizzard"]["talkinghead"] = false
+	E.private["skins"]["blizzard"]["taxi"] = false
+	E.private["skins"]["blizzard"]["timemanager"] = false
+	E.private["skins"]["blizzard"]["torghastLevelPicker"] = false
+	E.private["skins"]["blizzard"]["trade"] = false
+	E.private["skins"]["blizzard"]["tradeskill"] = false
+	E.private["skins"]["blizzard"]["trainer"] = false
+	E.private["skins"]["blizzard"]["transmogrify"] = false
+	E.private["skins"]["blizzard"]["tutorials"] = false
+	E.private["skins"]["blizzard"]["voidstorage"] = false
+	E.private["skins"]["blizzard"]["weeklyRewards"] = false
+	E.private["skins"]["blizzard"]["worldmap"] = false
+	E.private["skins"]["parchmentRemoverEnable"] = true
+
+	E.private["theme"] = "class"
+end
+
+-- WeakAuras options
+function Private:Setup_ElvUI_WeakAuras()
+	if not E:IsAddOnEnabled('WeakAuras') then Private:Print('WeakAuras ' .. 'is not installed or enabled.') return end
+
+	E.db["WeakAuras"]["cooldown"]["fonts"]["enable"] = true
+	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = Private.Font
+	E.db["WeakAuras"]["cooldown"]["fonts"]["fontSize"] = 16
+	E.db["WeakAuras"]["cooldown"]["hideBlizzard"] = true
+end
+
+-- ElvUI layout
 function Private:Setup_ElvUI_Profile()
 
 	E.data:SetProfile('XvUI')
@@ -1003,220 +1162,4 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["VehicleLeaveButton"] = "BOTTOM,ElvUIParent,BOTTOM,0,110"
 	E.db["movers"]["VehicleSeatMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,5,-320"
 	E.db["movers"]["ZoneAbility"] = "BOTTOMRIGHT,UIParent,BOTTOMRIGHT,-639,217"
-end
-
-function Private:Setup_ElvUI_GlobalDB()
-	E.global["general"]["WorldMapCoordinates"]["position"] = "BOTTOMRIGHT"
-	E.global["general"]["commandBarSetting"] = "DISABLED"
-	E.global["general"]["fadeMapWhenMoving"] = false
-	E.global["general"]["smallerWorldMap"] = false
-end
-
-function Private:Setup_ElvUI_PrivateDB()
-
-	local isBagsEnabled = true
-
-	local BAG_ADDONS = { "Bagnon", "BetterBags", "Baggins", "Sorted", "Inventorian", "Baganator", "ArkInventory", "OneBag3", "Combuctor" }
-
-	for _, addon in ipairs(BAG_ADDONS) do
-		if E:IsAddOnEnabled(addon) then isBagsEnabled = false end
-	end
-
-	E.private["bags"]["enable"] = isBagsEnabled
-	E.private["nameplates"]["enable"] = false
-	E.private["install_complete"] = E.version
-
-	E.private["general"]["chatBubbleFont"] = Private.Font
-	E.private["general"]["chatBubbles"] = "disabled"
-	E.private["general"]["dmgfont"] = Private.Font
-	E.private["general"]["glossTex"] = Private.Texture
-	E.private["general"]["loot"] = false
-	E.private["general"]["lootRoll"] = false
-	E.private["general"]["namefont"] = Private.Font
-	E.private["general"]["nameplateFont"] = Private.Font
-	E.private["general"]["nameplateLargeFont"] = Private.Font
-	E.private["general"]["nameplateLargeFontSize"] = 12
-	E.private["general"]["normTex"] = Private.Texture
-	E.private["general"]["replaceBlizzFonts"] = false
-	E.private["general"]["replaceCombatFont"] = false
-	E.private["general"]["replaceNameFont"] = false
-	E.private["general"]["replaceNameplateFont"] = false
-	E.private["general"]["worldMap"] = false
-
-	E.private["skins"]["blizzard"]["achievement"] = false
-	E.private["skins"]["blizzard"]["addonManager"] = false
-	E.private["skins"]["blizzard"]["adventureMap"] = false
-	E.private["skins"]["blizzard"]["alertframes"] = false
-	E.private["skins"]["blizzard"]["alliedRaces"] = false
-	E.private["skins"]["blizzard"]["animaDiversion"] = false
-	E.private["skins"]["blizzard"]["archaeology"] = false
-	E.private["skins"]["blizzard"]["arena"] = false
-	E.private["skins"]["blizzard"]["arenaRegistrar"] = false
-	E.private["skins"]["blizzard"]["artifact"] = false
-	E.private["skins"]["blizzard"]["auctionhouse"] = false
-	E.private["skins"]["blizzard"]["azerite"] = false
-	E.private["skins"]["blizzard"]["azeriteEssence"] = false
-	E.private["skins"]["blizzard"]["azeriteRespec"] = false
-	E.private["skins"]["blizzard"]["bags"] = false
-	E.private["skins"]["blizzard"]["barber"] = false
-	E.private["skins"]["blizzard"]["battlefield"] = false
-	E.private["skins"]["blizzard"]["bgmap"] = false
-	E.private["skins"]["blizzard"]["bgscore"] = false
-	E.private["skins"]["blizzard"]["binding"] = false
-	E.private["skins"]["blizzard"]["blizzardOptions"] = false
-	E.private["skins"]["blizzard"]["bmah"] = false
-	E.private["skins"]["blizzard"]["calendar"] = false
-	E.private["skins"]["blizzard"]["campsites"] = false
-	E.private["skins"]["blizzard"]["channels"] = false
-	E.private["skins"]["blizzard"]["character"] = false
-	E.private["skins"]["blizzard"]["chromieTime"] = false
-	E.private["skins"]["blizzard"]["collections"] = false
-	E.private["skins"]["blizzard"]["communities"] = false
-	E.private["skins"]["blizzard"]["contribution"] = false
-	E.private["skins"]["blizzard"]["covenantPreview"] = false
-	E.private["skins"]["blizzard"]["covenantRenown"] = false
-	E.private["skins"]["blizzard"]["covenantSanctum"] = false
-	E.private["skins"]["blizzard"]["craft"] = false
-	E.private["skins"]["blizzard"]["deathRecap"] = false
-	E.private["skins"]["blizzard"]["debug"] = false
-	E.private["skins"]["blizzard"]["dressingroom"] = false
-	E.private["skins"]["blizzard"]["editor"] = false
-	E.private["skins"]["blizzard"]["encounterjournal"] = false
-	E.private["skins"]["blizzard"]["engraving"] = false
-	E.private["skins"]["blizzard"]["eventLog"] = false
-	E.private["skins"]["blizzard"]["expansionLanding"] = false
-	E.private["skins"]["blizzard"]["friends"] = false
-	E.private["skins"]["blizzard"]["garrison"] = false
-	E.private["skins"]["blizzard"]["gbank"] = false
-	E.private["skins"]["blizzard"]["genericTrait"] = false
-	E.private["skins"]["blizzard"]["gmChat"] = false
-	E.private["skins"]["blizzard"]["gossip"] = false
-	E.private["skins"]["blizzard"]["greeting"] = false
-	E.private["skins"]["blizzard"]["guide"] = false
-	E.private["skins"]["blizzard"]["guild"] = false
-	E.private["skins"]["blizzard"]["guildBank"] = false
-	E.private["skins"]["blizzard"]["guildcontrol"] = false
-	E.private["skins"]["blizzard"]["guildregistrar"] = false
-	E.private["skins"]["blizzard"]["help"] = false
-	E.private["skins"]["blizzard"]["inspect"] = false
-	E.private["skins"]["blizzard"]["islandQueue"] = false
-	E.private["skins"]["blizzard"]["islandsPartyPose"] = false
-	E.private["skins"]["blizzard"]["itemInteraction"] = false
-	E.private["skins"]["blizzard"]["itemUpgrade"] = false
-	E.private["skins"]["blizzard"]["lfg"] = false
-	E.private["skins"]["blizzard"]["lfguild"] = false
-	E.private["skins"]["blizzard"]["loot"] = false
-	E.private["skins"]["blizzard"]["losscontrol"] = false
-	E.private["skins"]["blizzard"]["macro"] = false
-	E.private["skins"]["blizzard"]["mail"] = false
-	E.private["skins"]["blizzard"]["majorFactions"] = false
-	E.private["skins"]["blizzard"]["merchant"] = false
-	E.private["skins"]["blizzard"]["mirrorTimers"] = false
-	E.private["skins"]["blizzard"]["misc"] = false
-	E.private["skins"]["blizzard"]["nonraid"] = false
-	E.private["skins"]["blizzard"]["obliterum"] = false
-	E.private["skins"]["blizzard"]["orderhall"] = false
-	E.private["skins"]["blizzard"]["perks"] = false
-	E.private["skins"]["blizzard"]["petbattleui"] = false
-	E.private["skins"]["blizzard"]["petition"] = false
-	E.private["skins"]["blizzard"]["playerChoice"] = false
-	E.private["skins"]["blizzard"]["pvp"] = false
-	E.private["skins"]["blizzard"]["quest"] = false
-	E.private["skins"]["blizzard"]["questChoice"] = false
-	E.private["skins"]["blizzard"]["raid"] = false
-	E.private["skins"]["blizzard"]["reforge"] = false
-	E.private["skins"]["blizzard"]["runeforge"] = false
-	E.private["skins"]["blizzard"]["scrapping"] = false
-	E.private["skins"]["blizzard"]["socket"] = false
-	E.private["skins"]["blizzard"]["soulbinds"] = false
-	E.private["skins"]["blizzard"]["spellbook"] = false
-	E.private["skins"]["blizzard"]["stable"] = false
-	E.private["skins"]["blizzard"]["subscriptionInterstitial"] = false
-	E.private["skins"]["blizzard"]["tabard"] = false
-	E.private["skins"]["blizzard"]["talent"] = false
-	E.private["skins"]["blizzard"]["talkinghead"] = false
-	E.private["skins"]["blizzard"]["taxi"] = false
-	E.private["skins"]["blizzard"]["timemanager"] = false
-	E.private["skins"]["blizzard"]["torghastLevelPicker"] = false
-	E.private["skins"]["blizzard"]["trade"] = false
-	E.private["skins"]["blizzard"]["tradeskill"] = false
-	E.private["skins"]["blizzard"]["trainer"] = false
-	E.private["skins"]["blizzard"]["transmogrify"] = false
-	E.private["skins"]["blizzard"]["tutorials"] = false
-	E.private["skins"]["blizzard"]["voidstorage"] = false
-	E.private["skins"]["blizzard"]["weeklyRewards"] = false
-	E.private["skins"]["blizzard"]["worldmap"] = false
-	E.private["skins"]["parchmentRemoverEnable"] = true
-
-	E.private["theme"] = "class"
-end
-
-function Private:Setup_ElvUI_ABB()
-	if not E:IsAddOnEnabled('ElvUI_ActionBarBuddy') then Private:Print('ElvUI_ActionBarBuddy ' .. 'is not installed or enabled.') return end
-
-	E.db["abb"]["bar1"]["customTriggers"] = true
-	E.db["abb"]["bar1"]["displayTriggers"]["hasFocus"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["hasTarget"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["inCombat"] = 0
-	E.db["abb"]["bar1"]["displayTriggers"]["inVehicle"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["isDragonRiding"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
-	E.db["abb"]["bar1"]["displayTriggers"]["isPossessed"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["isProfessionBookOpen"] = true
-	E.db["abb"]["bar1"]["displayTriggers"]["notMaxHealth"] = false
-	E.db["abb"]["bar1"]["displayTriggers"]["playerCasting"] = false
-	E.db["abb"]["bar1"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar10"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar13"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar14"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar15"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar2"]["displayTriggers"]["hasFocus"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["hasOverridebar"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["hasTarget"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["inCombat"] = 0
-	E.db["abb"]["bar2"]["displayTriggers"]["inVehicle"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["isDragonRiding"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["isPossessed"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["mouseover"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["notMaxHealth"] = false
-	E.db["abb"]["bar2"]["displayTriggers"]["playerCasting"] = false
-	E.db["abb"]["bar2"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar3"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar4"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar5"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar6"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar7"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar8"]["inheritGlobalFade"] = true
-	E.db["abb"]["bar9"]["inheritGlobalFade"] = true
-	E.db["abb"]["barPet"]["inheritGlobalFade"] = true
-	E.db["abb"]["global"]["displayTriggers"]["hasFocus"] = false
-	E.db["abb"]["global"]["displayTriggers"]["hasOverridebar"] = false
-	E.db["abb"]["global"]["displayTriggers"]["hasTarget"] = false
-	E.db["abb"]["global"]["displayTriggers"]["inCombat"] = 0
-	E.db["abb"]["global"]["displayTriggers"]["inVehicle"] = false
-	E.db["abb"]["global"]["displayTriggers"]["isDragonRiding"] = false
-	E.db["abb"]["global"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
-	E.db["abb"]["global"]["displayTriggers"]["isPossessed"] = false
-	E.db["abb"]["global"]["displayTriggers"]["isProfessionBookOpen"] = true
-	E.db["abb"]["global"]["displayTriggers"]["notMaxHealth"] = false
-	E.db["abb"]["global"]["displayTriggers"]["playerCasting"] = false
-	E.db["abb"]["global"]["globalFadeAlpha"] = 1
-	E.db["abb"]["stanceBar"]["displayTriggers"]["inCombat"] = 1
-	E.db["abb"]["stanceBar"]["inheritGlobalFade"] = true
-
-	-- Update ElvUI
-	E:StaggeredUpdateAll()
-
-	-- Show message about layout being set
-	PluginInstallStepComplete.message = "Layout Set"
-	PluginInstallStepComplete:Show()
-end
-
-function Private:Setup_ElvUI_WeakAuras()
-	if not E:IsAddOnEnabled('WeakAuras') then Private:Print('WeakAuras ' .. 'is not installed or enabled.') return end
-
-	E.db["WeakAuras"]["cooldown"]["fonts"]["enable"] = true
-	E.db["WeakAuras"]["cooldown"]["fonts"]["font"] = Private.Font
-	E.db["WeakAuras"]["cooldown"]["fonts"]["fontSize"] = 16
-	E.db["WeakAuras"]["cooldown"]["hideBlizzard"] = true
 end

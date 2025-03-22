@@ -1,5 +1,7 @@
 <Ui>
 	<Script file='Init.lua'/>
+	<Include file='Locales\Locales.xml'/>
+	<Include file='Core\Core.xml'/>
 	<Include file='Media\Media.xml'/>
 	<Include file='Profiles\Profiles.xml'/>
 </Ui>

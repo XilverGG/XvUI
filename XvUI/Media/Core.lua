@@ -6,24 +6,31 @@ local MediaType_FONT = LSM.MediaType.FONT
 local MediaType_STATUSBAR = LSM.MediaType.STATUSBAR
 local MediaType_SOUND = LSM.MediaType.SOUND
 
--- ----- 
--- BACKGROUND 
--- ----- 
+-- -----
+-- BACKGROUND
+-- -----
 
--- ----- 
---  BORDER 
--- ---- 
+-- -----
+--  BORDER
+-- ----
 
 -- -----
 --   FONT
 -- -----
-LSM:Register(MediaType_FONT, "XvUI", [[Interface\Addons\XvUI\Media\Fonts\XvUI.ttf]]) 
-LSM:Register(MediaType_FONT, "XvUI CYR", [[Interface\Addons\XvUI\Media\Fonts\XvUI_CYR.ttf]]) 
+LSM:Register(MediaType_FONT, "XvUI", [[Interface\Addons\XvUI\Media\Fonts\XvUI.ttf]])
+LSM:Register(MediaType_FONT, "XvUI CYR", [[Interface\Addons\XvUI\Media\Fonts\XvUI_CYR.ttf]])
 
 -- -----
 --   SOUND
 -- -----
-
+LSM:Register(MediaType_SOUND, "|cff0099ffAlert|r", [[Interface\Addons\XvUI\Media\Sounds\alert.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffAvoid|r", [[Interface\Addons\XvUI\Media\Sounds\avoid.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffDamage|r", [[Interface\Addons\XvUI\Media\Sounds\damage.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffFrontal|r", [[Interface\Addons\XvUI\Media\Sounds\frontal.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffKick|r", [[Interface\Addons\XvUI\Media\Sounds\kick.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffStun|r", [[Interface\Addons\XvUI\Media\Sounds\stun.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffSwirly|r", [[Interface\Addons\XvUI\Media\Sounds\swirly.ogg]])
+LSM:Register(MediaType_SOUND, "|cff0099ffTank|r", [[Interface\Addons\XvUI\Media\Sounds\tank.ogg]])
 -- -----
 --   STATUSBAR
 -- -----
