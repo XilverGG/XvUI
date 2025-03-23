@@ -49,14 +49,15 @@ function XVUI:Config()
 	XVUI.Options.args.setup.args.spacer2 = ACH:Spacer(5, 'full')
 	XVUI.Options.args.setup.args.header2 = ACH:Header(L["Quick setup for alts"], 6)
 	XVUI.Options.args.setup.args.spacer3 = ACH:Spacer(7, 'full')
-	XVUI.Options.args.setup.args.altMain = ACH:Execute(L["Alt: "] .. L["DPS & Tanks"], L["Quick setup for alts"] .. '\n\n' .. L["This step will load your most recent XvUI profile."], 8, function() Private:HandleAlts('Main') end, nil, true)
+	XVUI.Options.args.setup.args.altMain = ACH:Execute(L["Alt: "] .. L["DPS/Tank/Healer"], L["Quick setup for alts"] .. '\n\n' .. L["This step will load your most recent XvUI profile."], 8, function() Private:HandleAlts('Main') end, nil, true)
 
 	-- Spacer
 	XVUI.Options.args.header = ACH:Spacer(2, 'full')
 
 	-- WeakAuras Retail
 	XVUI.Options.args.weakauras = ACH:Group('WeakAuras', nil, 3)
-	XVUI.Options.args.weakauras.args.edits = ACH:Group(L["WeakAuras - Edits"], nil, 1)
+	L1UI.Options.args.weakauras.args.header = ACH:Header(L["WeakAuras"], 1)
+	XVUI.Options.args.weakauras.args.edits = ACH:Group(L["WeakAuras - Edits"], nil, 2)
 	XVUI.Options.args.weakauras.args.edits.inline = true
 	XVUI.Options.args.weakauras.args.edits.args.importButtonNPA = ACH:Execute(L["M+ Nameplate Alerts"], nil, 1, function() Private:Setup_WeakAuras('customEditsRanged') end)
 
