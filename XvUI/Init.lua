@@ -29,8 +29,8 @@ Private.Outline = 'OUTLINE'
 Private.Config = {}
 
 -- Constants: Version checks
---Private.RequiredElvUI = tonumber(GetAddOnMetadata(Name, 'X-Required-ElvUI'))
-Private.Version = tonumber(GetAddOnMetadata(Name, 'Version'))
+Private.RequiredElvUI = tonumber(GetAddOnMetadata(Name, 'X-Required-ElvUI'))
+Private.Version = GetAddOnMetadata(Name, 'Version')
 
 -- Initialize module in ElvUI
 local function Initialize()

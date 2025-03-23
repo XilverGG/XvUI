@@ -15,7 +15,7 @@ local _G = _G
 local _, Private = ...
 
 -- ElvUI modules
-local E, L = unpack(ElvUI)
+local E, L, V, P, G = unpack(ElvUI)
 local PI = E:GetModule('PluginInstaller')
 
 -- Chat print
@@ -32,6 +32,14 @@ E.PopupDialogs.XVUI_RL = {
 	whileDead = 1,
 	hideOnEscape = false,
 }
+
+-- Version check
+function Private:VersionCheck()
+	if E.version < Private.RequiredElvUI then
+		E:StaticPopup_Show('XVUI_VC')
+		Private:Print(format('|cffFF0000%s|r', L["Your ElvUI is outdated - please update and reload."]))
+	end
+end
 
 -- Version check popup
 E.PopupDialogs.XVUI_VC = {

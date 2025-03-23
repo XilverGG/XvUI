@@ -26,7 +26,8 @@ local ACH
 
 function XVUI:Config()
 
-	E.Options.name = format('%s + %s |cff0099ff%.2f|r', E.Options.name, Private.Name, Private.Version)
+
+	E.Options.name = format('%s + %s |cff0099ff%s|r', E.Options.name, Private.Name, Private.Version)
 
 	-- LibAceConfigHelper
 	ACH = E.Libs.ACH
@@ -55,12 +56,9 @@ function XVUI:Config()
 
 	-- WeakAuras Retail
 	XVUI.Options.args.weakauras = ACH:Group('WeakAuras', nil, 3)
+	XVUI.Options.args.weakauras.args.edits = ACH:Group(L["WeakAuras - Edits"], nil, 1)
 	XVUI.Options.args.weakauras.args.edits.inline = true
-	XVUI.Options.args.weakauras.args.edits.args.importButtonRanged = ACH:Execute(L["Ranged DPS"], nil, 1, function() Private:WeakAurasImport('customEditsRanged') end)
-	XVUI.Options.args.weakauras.args.edits.args.importButtonMelee = ACH:Execute(L["Melee DPS"], nil, 2, function() Private:WeakAurasImport('customEditsMelee') end)
-	XVUI.Options.args.weakauras.args.edits.args.spacer = ACH:Spacer(3, 'full')
-	XVUI.Options.args.weakauras.args.edits.args.importButtonTanks = ACH:Execute(L["Tanks"], nil, 4, function() Private:WeakAurasImport('customEditsTanks') end)
-	XVUI.Options.args.weakauras.args.edits.args.importButtonHealers = ACH:Execute(L["Healers"], nil, 5, function() Private:WeakAurasImport('customEditsHealers') end)
+	XVUI.Options.args.weakauras.args.edits.args.importButtonNPA = ACH:Execute(L["M+ Nameplate Alerts"], nil, 1, function() Private:Setup_WeakAuras('customEditsRanged') end)
 
 	E.Options.args.XVUI = XVUI.Options
 end
