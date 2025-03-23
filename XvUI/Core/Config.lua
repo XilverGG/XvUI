@@ -56,7 +56,7 @@ function XVUI:Config()
 
 	-- WeakAuras Retail
 	XVUI.Options.args.weakauras = ACH:Group('WeakAuras', nil, 3)
-	L1UI.Options.args.weakauras.args.header = ACH:Header(L["WeakAuras"], 1)
+	XVUI.Options.args.weakauras.args.header = ACH:Header(L["WeakAuras"], 1)
 	XVUI.Options.args.weakauras.args.edits = ACH:Group(L["WeakAuras - Edits"], nil, 2)
 	XVUI.Options.args.weakauras.args.edits.inline = true
 	XVUI.Options.args.weakauras.args.edits.args.importButtonNPA = ACH:Execute(L["M+ Nameplate Alerts"], nil, 1, function() Private:Setup_WeakAuras('customEditsRanged') end)
