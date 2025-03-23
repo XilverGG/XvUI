@@ -7,6 +7,7 @@
 ## Version: @project-version@
 
 ## Interface: 110100
+## X-Required-ElvUI: 13.87
 
 ## X-Curse-Project-ID: 919480
 
