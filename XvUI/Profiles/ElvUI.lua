@@ -7,6 +7,11 @@ local _, Private = ...
 -- ElvUI modules
 local E = unpack(ElvUI)
 
+--[[
+ElvUI profile
+LC: 9/04/2025
+]]
+
 function Private:Setup_ElvUI()
 	Private:Setup_ElvUI_Profile()
 	Private:Setup_ElvUI_PrivateDB()
@@ -780,6 +785,8 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["party"]["buffs"]["perrow"] = 6
 	E.db["unitframe"]["units"]["party"]["buffs"]["priority"] = "Blacklist,TurtleBuffs,PlayerBuffs"
 	E.db["unitframe"]["units"]["party"]["buffs"]["xOffset"] = -5
+	E.db["unitframe"]["units"]["party"]["classbar"]["fill"] = "spaced"
+	E.db["unitframe"]["units"]["party"]["classbar"]["height"] = 7
 	E.db["unitframe"]["units"]["party"]["debuffs"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["party"]["debuffs"]["perrow"] = 6
 	E.db["unitframe"]["units"]["party"]["debuffs"]["sizeOverride"] = 0
@@ -948,6 +955,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["raid1"]["ROLE1"] = "HEALER"
 	E.db["unitframe"]["units"]["raid1"]["ROLE2"] = "TANK"
 	E.db["unitframe"]["units"]["raid1"]["buffIndicator"]["countFont"] = Private.Font
+	E.db["unitframe"]["units"]["raid1"]["classbar"]["height"] = 7
 	E.db["unitframe"]["units"]["raid1"]["groupBy"] = "ROLE"
 	E.db["unitframe"]["units"]["raid1"]["growthDirection"] = "LEFT_UP"
 	E.db["unitframe"]["units"]["raid1"]["healPrediction"]["absorbStyle"] = "WRAPPED"
