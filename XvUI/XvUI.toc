@@ -10,6 +10,7 @@
 ## X-Required-ElvUI: 13.87
 
 ## X-Curse-Project-ID: 919480
+## X-Wago-ID: kGr0aM6y
 
 ## IconTexture: Interface\AddOns\XvUI\Media\Textures\XvUI_Logo
 
