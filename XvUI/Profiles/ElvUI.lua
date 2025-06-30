@@ -289,7 +289,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar2"]["macroTextYOffset"] = 0
 
 	E.db["actionbar"]["bar3"]["buttons"] = 12
-	E.db["actionbar"]["bar3"]["buttonsPerRow"] = 12
+	E.db["actionbar"]["bar3"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar3"]["buttonSize"] = 36
 	E.db["actionbar"]["bar3"]["buttonSpacing"] = 5
 	E.db["actionbar"]["bar3"]["countFont"] = Private.Font
@@ -306,8 +306,8 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar3"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar3"]["macroTextYOffset"] = 0
 
-	E.db["actionbar"]["bar4"]["backdrop"] = false
-	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 12
+	E.db["actionbar"]["bar4"]["buttons"] = 12
+	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar4"]["buttonSize"] = 36
 	E.db["actionbar"]["bar4"]["buttonSpacing"] = 5
 	E.db["actionbar"]["bar4"]["countFont"] = Private.Font
@@ -323,10 +323,9 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar4"]["macrotext"] = true
 	E.db["actionbar"]["bar4"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar4"]["macroTextYOffset"] = 0
-	E.db["actionbar"]["bar4"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar5"]["buttons"] = 12
-	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar5"]["backdrop"] = false
+	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar5"]["buttonSize"] = 36
 	E.db["actionbar"]["bar5"]["buttonSpacing"] = 5
 	E.db["actionbar"]["bar5"]["countFont"] = Private.Font
@@ -342,9 +341,10 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar5"]["macrotext"] = true
 	E.db["actionbar"]["bar5"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar5"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar5"]["point"] = "BOTTOMLEFT"
 
 	E.db["actionbar"]["bar6"]["buttons"] = 12
-	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar6"]["buttonSize"] = 36
 	E.db["actionbar"]["bar6"]["buttonSpacing"] = 5
 	E.db["actionbar"]["bar6"]["countFont"] = Private.Font
@@ -1115,10 +1115,10 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["ElvAB_14"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-484,40"
 	E.db["movers"]["ElvAB_15"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,4,230"
 	E.db["movers"]["ElvAB_2"] = "BOTTOM,UIParent,BOTTOM,278,175"
-	E.db["movers"]["ElvAB_3"] = "BOTTOM,ElvUIParent,BOTTOM,0,81"
-	E.db["movers"]["ElvAB_4"] = "BOTTOM,ElvUIParent,BOTTOM,0,122"
-	E.db["movers"]["ElvAB_5"] = "BOTTOM,ElvUIParent,BOTTOM,340,40"
-	E.db["movers"]["ElvAB_6"] = "BOTTOM,ElvUIParent,BOTTOM,-340,40"
+	E.db["movers"]["ElvAB_3"] = "BOTTOM,ElvUIParent,BOTTOM,-340,40"
+	E.db["movers"]["ElvAB_4"] = "BOTTOM,ElvUIParent,BOTTOM,340,40"
+	E.db["movers"]["ElvAB_5"] = "BOTTOM,ElvUIParent,BOTTOM,0,122"
+	E.db["movers"]["ElvAB_6"] = "BOTTOM,ElvUIParent,BOTTOM,0,81"
 	E.db["movers"]["ElvAB_7"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-4,298"
 	E.db["movers"]["ElvAB_8"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-4,332"
 	E.db["movers"]["ElvAB_9"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-4,366"
