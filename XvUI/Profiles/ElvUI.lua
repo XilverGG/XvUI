@@ -243,7 +243,6 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["minimap"]["size"] = 220
 	E.db["general"]["minimap"]["timeFont"] = Private.Font
 	E.db["general"]["minimap"]["timeFontOutline"] = "SHADOW"
-	E.db["general"]["objectiveFrameAutoHide"] = false
 	E.db["general"]["objectiveFrameHeight"] = 400
 	E.db["general"]["queueStatus"]["font"] = Private.Font
 	E.db["general"]["queueStatus"]["fontSize"] = 12
