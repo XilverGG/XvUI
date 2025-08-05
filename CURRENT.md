@@ -2,5 +2,6 @@
 - Add Wago Addons integration
 - Add plugin setup menu with additional options
 - Update addon profiles to last version
+- Update Nameplate symbol textures
 - Remove old personal modifications
 - Fix some typos
