@@ -6,8 +6,8 @@
 ## Author: Xilver
 ## Version: @project-version@
 
-## Interface: 110100
-## X-Required-ElvUI: 13.87
+## Interface: 110200
+## X-Required-ElvUI: 13.95
 
 ## X-Curse-Project-ID: 919480
 ## X-Wago-ID: kGr0aM6y
