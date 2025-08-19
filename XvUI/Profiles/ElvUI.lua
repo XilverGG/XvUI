@@ -9,7 +9,7 @@ local E = unpack(ElvUI)
 
 --[[
 ElvUI profile
-LC: 9/04/2025
+LC: 18/08/2025
 ]]
 
 function Private:Setup_ElvUI()
@@ -208,7 +208,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["backdropcolor"]["b"] = 0.2
 	E.db["general"]["backdropcolor"]["g"] = 0.2
 	E.db["general"]["backdropcolor"]["r"] = 0.2
-	E.db["general"]["backdropfadecolor"]["a"] = 0.8
+	--E.db["general"]["backdropfadecolor"]["a"] = 0.8
 	E.db["general"]["backdropfadecolor"]["b"] = 0.1
 	E.db["general"]["backdropfadecolor"]["g"] = 0.1
 	E.db["general"]["backdropfadecolor"]["r"] = 0.1
@@ -243,6 +243,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["minimap"]["size"] = 220
 	E.db["general"]["minimap"]["timeFont"] = Private.Font
 	E.db["general"]["minimap"]["timeFontOutline"] = "SHADOW"
+	E.db["general"]["objectiveFrameAutoHide"] = false
 	E.db["general"]["objectiveFrameHeight"] = 400
 	E.db["general"]["queueStatus"]["font"] = Private.Font
 	E.db["general"]["queueStatus"]["fontSize"] = 12
@@ -257,8 +258,11 @@ function Private:Setup_ElvUI_Profile()
 	E.db["general"]["valuecolor"]["r"] = 0.24705883860588
 
 	-- ActionBars
+	E.db["actionbar"]["bar1"]["backdrop"] = false
 	E.db["actionbar"]["bar1"]["buttonSize"] = 36
 	E.db["actionbar"]["bar1"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar1"]["buttons"] = 12
+	E.db["actionbar"]["bar1"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar1"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar1"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar1"]["countFontSize"] = 12
@@ -271,9 +275,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar1"]["macrotext"] = true
 	E.db["actionbar"]["bar1"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar1"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar1"]["point"] = "BOTTOMLEFT"
 
+	E.db["actionbar"]["bar2"]["backdrop"] = false
 	E.db["actionbar"]["bar2"]["buttonSize"] = 36
 	E.db["actionbar"]["bar2"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar2"]["buttons"] = 12
+	E.db["actionbar"]["bar2"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar2"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar2"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar2"]["countFontSize"] = 12
@@ -286,11 +294,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar2"]["macrotext"] = true
 	E.db["actionbar"]["bar2"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar2"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar2"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar3"]["buttons"] = 12
-	E.db["actionbar"]["bar3"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar3"]["backdrop"] = false
 	E.db["actionbar"]["bar3"]["buttonSize"] = 36
 	E.db["actionbar"]["bar3"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar3"]["buttons"] = 12
+	E.db["actionbar"]["bar3"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar3"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar3"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar3"]["countFontSize"] = 12
@@ -304,15 +314,17 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar3"]["macrotext"] = true
 	E.db["actionbar"]["bar3"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar3"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar3"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar4"]["buttons"] = 12
-	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar4"]["backdrop"] = false
 	E.db["actionbar"]["bar4"]["buttonSize"] = 36
 	E.db["actionbar"]["bar4"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar4"]["buttons"] = 12
+	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar4"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar4"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar4"]["countFontSize"] = 12
-	E.db["actionbar"]["bar4"]["enabled"] = true
+	E.db["actionbar"]["bar4"]["enabled"] = true -- Watch
 	E.db["actionbar"]["bar4"]["hotkeyFont"] = Private.Font
 	E.db["actionbar"]["bar4"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar4"]["hotkeyFontSize"] = 12
@@ -322,15 +334,17 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar4"]["macrotext"] = true
 	E.db["actionbar"]["bar4"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar4"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar4"]["point"] = "BOTTOMLEFT"
 
 	E.db["actionbar"]["bar5"]["backdrop"] = false
-	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar5"]["buttonSize"] = 36
 	E.db["actionbar"]["bar5"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar5"]["buttons"] = 12
+	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar5"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar5"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar5"]["countFontSize"] = 12
-	E.db["actionbar"]["bar5"]["enabled"] = true
+	E.db["actionbar"]["bar5"]["enabled"] = true -- Watch
 	E.db["actionbar"]["bar5"]["hotkeyFont"] = Private.Font
 	E.db["actionbar"]["bar5"]["hotkeyFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar5"]["hotkeyFontSize"] = 12
@@ -342,10 +356,11 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar5"]["macroTextYOffset"] = 0
 	E.db["actionbar"]["bar5"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar6"]["buttons"] = 12
-	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 12
+	E.db["actionbar"]["bar6"]["backdrop"] = false
 	E.db["actionbar"]["bar6"]["buttonSize"] = 36
 	E.db["actionbar"]["bar6"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar6"]["buttons"] = 12
+	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar6"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar6"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar6"]["countFontSize"] = 12
@@ -359,9 +374,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar6"]["macrotext"] = true
 	E.db["actionbar"]["bar6"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar6"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar6"]["point"] = "BOTTOMLEFT"
 
+	E.db["actionbar"]["bar7"]["backdrop"] = false
 	E.db["actionbar"]["bar7"]["buttonSize"] = 36
 	E.db["actionbar"]["bar7"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar7"]["buttons"] = 12
+	E.db["actionbar"]["bar7"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar7"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar7"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar7"]["countFontSize"] = 12
@@ -374,9 +393,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar7"]["macrotext"] = true
 	E.db["actionbar"]["bar7"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar7"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar7"]["point"] = "BOTTOMLEFT"
 
+	E.db["actionbar"]["bar8"]["backdrop"] = false
 	E.db["actionbar"]["bar8"]["buttonSize"] = 36
 	E.db["actionbar"]["bar8"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar8"]["buttons"] = 12
+	E.db["actionbar"]["bar8"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar8"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar8"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar8"]["countFontSize"] = 12
@@ -389,9 +412,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar8"]["macrotext"] = true
 	E.db["actionbar"]["bar8"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar8"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar8"]["point"] = "BOTTOMLEFT"
 
+	E.db["actionbar"]["bar9"]["backdrop"] = false
 	E.db["actionbar"]["bar9"]["buttonSize"] = 36
 	E.db["actionbar"]["bar9"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar9"]["buttons"] = 12
+	E.db["actionbar"]["bar9"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar9"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar9"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar9"]["countFontSize"] = 12
@@ -404,9 +431,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar9"]["macrotext"] = true
 	E.db["actionbar"]["bar9"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar9"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar9"]["point"] = "BOTTOMLEFT"
 
+	E.db["actionbar"]["bar10"]["backdrop"] = false
 	E.db["actionbar"]["bar10"]["buttonSize"] = 36
 	E.db["actionbar"]["bar10"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar10"]["buttons"] = 12
+	E.db["actionbar"]["bar10"]["buttonsPerRow"] = 12
 	E.db["actionbar"]["bar10"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar10"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar10"]["countFontSize"] = 12
@@ -419,10 +450,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar10"]["macrotext"] = true
 	E.db["actionbar"]["bar10"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar10"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar10"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar13"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar13"]["backdrop"] = false
 	E.db["actionbar"]["bar13"]["buttonSize"] = 36
 	E.db["actionbar"]["bar13"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar13"]["buttons"] = 12
+	E.db["actionbar"]["bar13"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar13"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar13"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar13"]["countFontSize"] = 12
@@ -436,10 +470,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar13"]["macrotext"] = true
 	E.db["actionbar"]["bar13"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar13"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar13"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar14"]["buttonsPerRow"] = 4
+	E.db["actionbar"]["bar14"]["backdrop"] = false
 	E.db["actionbar"]["bar14"]["buttonSize"] = 36
 	E.db["actionbar"]["bar14"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar14"]["buttons"] = 12
+	E.db["actionbar"]["bar14"]["buttonsPerRow"] = 4
 	E.db["actionbar"]["bar14"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar14"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar14"]["countFontSize"] = 12
@@ -453,11 +490,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["actionbar"]["bar14"]["macrotext"] = true
 	E.db["actionbar"]["bar14"]["macroTextPosition"] = "BOTTOMRIGHT"
 	E.db["actionbar"]["bar14"]["macroTextYOffset"] = 0
+	E.db["actionbar"]["bar14"]["point"] = "BOTTOMLEFT"
 
-	E.db["actionbar"]["bar15"]["buttons"] = 6
-	E.db["actionbar"]["bar15"]["buttonsPerRow"] = 1
+	E.db["actionbar"]["bar15"]["backdrop"] = false
 	E.db["actionbar"]["bar15"]["buttonSize"] = 36
 	E.db["actionbar"]["bar15"]["buttonSpacing"] = 5
+	E.db["actionbar"]["bar15"]["buttons"] = 6
+	E.db["actionbar"]["bar15"]["buttonsPerRow"] = 1
 	E.db["actionbar"]["bar15"]["countFont"] = Private.Font
 	E.db["actionbar"]["bar15"]["countFontOutline"] = Private.Outline
 	E.db["actionbar"]["bar15"]["countFontSize"] = 12
@@ -567,6 +606,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["chat"]["font"] = Private.Font
 	E.db["chat"]["fontSize"] = 12
 	E.db["chat"]["historySize"] = 500
+	E.db["chat"]["panelBackdrop"] = "LEFT"
 	E.db["chat"]["panelColor"]["a"] = 0.5
 	E.db["chat"]["panelColor"]["b"] = 0.05
 	E.db["chat"]["panelColor"]["g"] = 0.05
@@ -578,6 +618,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["chat"]["tabSelectorColor"]["g"] = 0.78039222955704
 	E.db["chat"]["tabSelectorColor"]["r"] = 0.24705883860588
 	E.db["chat"]["timeStampFormat"] = "%H:%M "
+	E.db["convertPages"] = true
 
 	-- Cooldown Text
 	E.db["cooldown"]["fonts"]["font"] = Private.Font
@@ -601,6 +642,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["datatexts"]["battlePanel"]["LeftChatDataPanel"][1] = "Talent/Loot Specialization"
 	E.db["datatexts"]["font"] = Private.Font
 	E.db["datatexts"]["panels"]["LeftChatDataPanel"][3] = "QuickJoin"
+	E.db["datatexts"]["panels"]["RightChatDataPanel"]["enable"] = false
 
 	-- Tooltip
 	E.db["tooltip"]["alwaysShowRealm"] = true
@@ -935,9 +977,6 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["player"]["name"]["text_format"] = "[name:medium]"
 	E.db["unitframe"]["units"]["player"]["name"]["xOffset"] = 10
 	E.db["unitframe"]["units"]["player"]["orientation"] = "RIGHT"
-	E.db["unitframe"]["units"]["player"]["portrait"]["fullOverlay"] = true
-	E.db["unitframe"]["units"]["player"]["portrait"]["overlay"] = true
-	E.db["unitframe"]["units"]["player"]["portrait"]["paused"] = true
 	E.db["unitframe"]["units"]["player"]["power"]["attachTextTo"] = "Frame"
 	E.db["unitframe"]["units"]["player"]["power"]["detachFromFrame"] = true
 	E.db["unitframe"]["units"]["player"]["power"]["detachedWidth"] = 120
@@ -955,6 +994,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["raid1"]["ROLE2"] = "TANK"
 	E.db["unitframe"]["units"]["raid1"]["buffIndicator"]["countFont"] = Private.Font
 	E.db["unitframe"]["units"]["raid1"]["classbar"]["height"] = 7
+	E.db["unitframe"]["units"]["raid1"]["enable"] = true
 	E.db["unitframe"]["units"]["raid1"]["groupBy"] = "ROLE"
 	E.db["unitframe"]["units"]["raid1"]["growthDirection"] = "LEFT_UP"
 	E.db["unitframe"]["units"]["raid1"]["healPrediction"]["absorbStyle"] = "WRAPPED"
@@ -1008,6 +1048,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["raid2"]["roleIcon"]["size"] = 16
 	E.db["unitframe"]["units"]["raid2"]["roleIcon"]["xOffset"] = -8
 	E.db["unitframe"]["units"]["raid2"]["roleIcon"]["yOffset"] = 8
+	E.db["unitframe"]["units"]["raid2"]["visibility"] = "[@raid6,noexists][@raid31,exists] hide;show"
 	E.db["unitframe"]["units"]["raid2"]["width"] = 100
 	E.db["unitframe"]["units"]["raid3"]["growthDirection"] = "RIGHT_UP"
 	E.db["unitframe"]["units"]["raid3"]["health"]["text_format"] = ""
@@ -1064,9 +1105,6 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["target"]["name"]["text_format"] = "[name]"
 	E.db["unitframe"]["units"]["target"]["name"]["xOffset"] = -10
 	E.db["unitframe"]["units"]["target"]["orientation"] = "LEFT"
-	E.db["unitframe"]["units"]["target"]["portrait"]["fullOverlay"] = true
-	E.db["unitframe"]["units"]["target"]["portrait"]["overlay"] = true
-	E.db["unitframe"]["units"]["target"]["portrait"]["paused"] = true
 	E.db["unitframe"]["units"]["target"]["power"]["attachTextTo"] = "Frame"
 	E.db["unitframe"]["units"]["target"]["power"]["detachFromFrame"] = true
 	E.db["unitframe"]["units"]["target"]["power"]["detachedWidth"] = 120
@@ -1097,11 +1135,13 @@ function Private:Setup_ElvUI_Profile()
 	E.db["unitframe"]["units"]["targettarget"]["width"] = 135
 
 	E.db["movers"]["AddonCompartmentMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-225,-225"
+	E.db["movers"]["AlertFrameMover"] = "TOP,ElvUIParent,TOP,0,-20"
 	E.db["movers"]["AltPowerBarMover"] = "TOP,ElvUIParent,TOP,0,-150"
 	E.db["movers"]["ArenaHeaderMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-254,-275"
 	E.db["movers"]["AzeriteBarMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-2,-245"
 	E.db["movers"]["BNETMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-4,-274"
 	E.db["movers"]["BelowMinimapContainerMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-4,-274"
+	E.db["movers"]["BossBannerMover"] = "TOP,ElvUIParent,TOP,0,-125"
 	E.db["movers"]["BossButton"] = "BOTTOM,UIParent,BOTTOM,0,100"
 	E.db["movers"]["BossHeaderMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-254,-274"
 	E.db["movers"]["BuffsMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-250,-2"
@@ -1131,7 +1171,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-340,290"
 	E.db["movers"]["ElvUF_PlayerMover"] = "BOTTOM,ElvUIParent,BOTTOM,-330,340"
 	E.db["movers"]["ElvUF_Raid1Mover"] = "TOPLEFT,ElvUIParent,TOPLEFT,250,-413"
-	E.db["movers"]["ElvUF_Raid2Mover"] = "BOTTOMLEFT,UIParent,BOTTOMLEFT,190,450"
+	E.db["movers"]["ElvUF_Raid2Mover"] = "TOPLEFT,ElvUIParent,TOPLEFT,10,-130"
 	E.db["movers"]["ElvUF_Raid3Mover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,43,230"
 	E.db["movers"]["ElvUF_TankMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,558,-413"
 	E.db["movers"]["ElvUF_TargetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,330,290"
@@ -1139,6 +1179,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["ElvUF_TargetTargetMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-470,340"
 	E.db["movers"]["ElvUIBagMover"] = "BOTTOMRIGHT,RightChatPanel,BOTTOMRIGHT,0,26"
 	E.db["movers"]["ElvUIBankMover"] = "BOTTOMLEFT,LeftChatPanel,BOTTOMLEFT,0,26"
+	E.db["movers"]["EventToastMover"] = "TOP,ElvUIParent,TOP,0,-150"
 	E.db["movers"]["ExperienceBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,5"
 	E.db["movers"]["GMMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,250,-5"
 	E.db["movers"]["HonorBarMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-2,-251"
@@ -1163,6 +1204,7 @@ function Private:Setup_ElvUI_Profile()
 	E.db["movers"]["SocialMenuMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,4,-187"
 	E.db["movers"]["TargetPowerBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-620,337"
 	E.db["movers"]["ThreatBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-4,4"
+	E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-3,3"
 	E.db["movers"]["TopCenterContainerMover"] = "TOP,ElvUIParent,TOP,0,-35"
 	E.db["movers"]["TotemTrackerMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,485,163"
 	E.db["movers"]["VOICECHAT"] = "TOPLEFT,ElvUIParent,TOPLEFT,250,-82"
