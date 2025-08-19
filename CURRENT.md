@@ -1,4 +1,4 @@
-## Version 0.7 [In Development]
+## Version 0.7 [18-08-2025]
 - Change ActionBar movers
 - Add Wago Addons integration
 - Add plugin setup menu with additional options
