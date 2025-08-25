@@ -12,7 +12,7 @@ local _G = _G
 local _, Private = ...
 
 -- ElvUI modules
-local E = unpack(ElvUI)
+local E, L = unpack(ElvUI)
 
 -- Set install version to current XvUI version
 local function InstallComplete()
@@ -22,14 +22,14 @@ end
 
 -- Installer table
 XVUI.InstallerData = {
-	Title = format("|cff0099ff%s %s|r", Private.Name, L["Installation"]),
+	Title = format('|cff0099ff%s %s|r', Private.Name, "Installation"),
 	Name = Private.Name,
 	tutorialImage = Private.Logo,
 	Pages = {
 		[1] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Welcome to the installation for %s.", Private.Name)
 			PluginInstallFrame.Desc1:SetText("The XvUI installer will guide you through a few steps and apply the profiles of your choice.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["Your existing profiles will not change. The installer will create a fresh profile."]))
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Your existing profiles will not change. The installer will create a fresh profile."))
 			PluginInstallFrame.Desc3:SetText("Please read the steps carefully before clicking any buttons.")
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", InstallComplete)

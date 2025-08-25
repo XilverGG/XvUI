@@ -70,6 +70,7 @@ function XVUI:PLAYER_ENTERING_WORLD(_, initLogin, isReload)
   if initLogin or isReload then
     Private:VersionCheck()
   end
+  XVUI:LoadCommands()
 end
 
 -- Register events
