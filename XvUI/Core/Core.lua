@@ -56,7 +56,7 @@ function XVUI:Toggles(msg)
     PI:Queue(XVUI.InstallerData)
   elseif msg == "config" then
     E:ToggleOptions()
-    E.Libs.AceConfigDialog:SelectGroup("ElvUI", "XvUI")
+    E.Libs.AceConfigDialog:SelectGroup("ElvUI", "XVUI")
   end
 end
 
