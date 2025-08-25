@@ -18,48 +18,48 @@ local _, Private = ...
 
 -- ElvUI modules
 local E, L = unpack(ElvUI)
-local D = E:GetModule('Distributor')
-local PI = E:GetModule('PluginInstaller')
+local D = E:GetModule("Distributor")
+local PI = E:GetModule("PluginInstaller")
 
 -- LibAceConfigHelper does not exist yet
 local ACH
 
 function XVUI:Config()
+  E.Options.name = format("%s + %s |cff0099ff%s|r", E.Options.name, Private.Name, Private.Version)
 
+  -- LibAceConfigHelper
+  ACH = E.Libs.ACH
 
-	E.Options.name = format('%s + %s |cff0099ff%s|r', E.Options.name, Private.Name, Private.Version)
+  -- Don't export this
+  D.blacklistedKeys.global.XVUI = {}
+  D.blacklistedKeys.global.XVUI.dev = true
 
-	-- LibAceConfigHelper
-	ACH = E.Libs.ACH
+  -- Header
+  XVUI.Options = ACH:Group(Private.Name, nil, 20)
 
-	-- Don't export this
-	D.blacklistedKeys.global.XVUI = {}
-	D.blacklistedKeys.global.XVUI.dev = true
+  -- Installer & Update
+  XVUI.Options.args.setup = ACH:Group("", nil, 1)
+  XVUI.Options.args.setup.inline = true
+  XVUI.Options.args.setup.args.header1 = ACH:Header(Private.Name, 1)
+  XVUI.Options.args.setup.args.spacer1 = ACH:Spacer(2, "full")
+  XVUI.Options.args.setup.args.installer = ACH:Execute(Private.Name .. " " .. L["Install"], L["Re-Run the installation process."], 3, function() PI:Queue(XVUI.InstallerData) E:ToggleOptions() end)
+  XVUI.Options.args.setup.args.dev = ACH:Toggle("Developer", "Personal author's config.", 4, nil, nil, nil, function() return E.global.XVUI.dev end, function(_, value) E.global.XVUI.dev = value end)
+  XVUI.Options.args.setup.args.spacer2 = ACH:Spacer(5, "full")
+  XVUI.Options.args.setup.args.header2 = ACH:Header(L["Quick setup for alts"], 6)
+  XVUI.Options.args.setup.args.spacer3 = ACH:Spacer(7, "full")
+  XVUI.Options.args.setup.args.altMain = ACH:Execute(L["Alt: "] .. L["DPS/Tank/Healer"], L["Quick setup for alts"] .. "\n\n" .. L["This step will load your most recent XvUI profile."], 8, function() Private:HandleAlts("Main") end, nil, true)
 
-	-- Header
-	XVUI.Options = ACH:Group(Private.Name, nil, 20)
+  -- Spacer
+  XVUI.Options.args.header = ACH:Spacer(2, "full")
 
-	-- Installer & Update
-	XVUI.Options.args.setup = ACH:Group('', nil, 1)
-	XVUI.Options.args.setup.inline = true
-	XVUI.Options.args.setup.args.header1 = ACH:Header(Private.Name, 1)
-	XVUI.Options.args.setup.args.spacer1 = ACH:Spacer(2, 'full')
-	XVUI.Options.args.setup.args.installer = ACH:Execute(Private.Name .. ' ' .. L["Install"], L["Re-Run the installation process."], 3, function() PI:Queue(XVUI.InstallerData) E:ToggleOptions() end)
-	XVUI.Options.args.setup.args.dev = ACH:Toggle('Developer', "Personal author's config.", 4, nil, nil, nil, function() return E.global.XVUI.dev end, function(_, value) E.global.XVUI.dev = value end)
-	XVUI.Options.args.setup.args.spacer2 = ACH:Spacer(5, 'full')
-	XVUI.Options.args.setup.args.header2 = ACH:Header(L["Quick setup for alts"], 6)
-	XVUI.Options.args.setup.args.spacer3 = ACH:Spacer(7, 'full')
-	XVUI.Options.args.setup.args.altMain = ACH:Execute(L["Alt: "] .. L["DPS/Tank/Healer"], L["Quick setup for alts"] .. '\n\n' .. L["This step will load your most recent XvUI profile."], 8, function() Private:HandleAlts('Main') end, nil, true)
+  -- WeakAuras Retail
+  XVUI.Options.args.weakauras = ACH:Group("WeakAuras", nil, 3)
+  XVUI.Options.args.weakauras.args.header = ACH:Header(L["WeakAuras"], 1)
+  XVUI.Options.args.weakauras.args.edits = ACH:Group(L["WeakAuras - Edits"], nil, 2)
+  XVUI.Options.args.weakauras.args.edits.inline = true
+  XVUI.Options.args.weakauras.args.edits.args.importButtonNPA = ACH:Execute(L["M+ Nameplate Alerts"], nil, 1, function() Private:Setup_WeakAuras("NPA") end)
+  XVUI.Options.args.weakauras.args.edits.args.importButtonDefensive = ACH:Execute(L["Defensive Buffs"], nil, 2, function() Private:Setup_WeakAuras("defensive") end)
+  XVUI.Options.args.weakauras.args.edits.args.importButtonUtility = ACH:Execute(L["Utility Buffs"], nil, 3, function() Private:Setup_WeakAuras("utility") end)
 
-	-- Spacer
-	XVUI.Options.args.header = ACH:Spacer(2, 'full')
-
-	-- WeakAuras Retail
-	XVUI.Options.args.weakauras = ACH:Group('WeakAuras', nil, 3)
-	XVUI.Options.args.weakauras.args.header = ACH:Header(L["WeakAuras"], 1)
-	XVUI.Options.args.weakauras.args.edits = ACH:Group(L["WeakAuras - Edits"], nil, 2)
-	XVUI.Options.args.weakauras.args.edits.inline = true
-	XVUI.Options.args.weakauras.args.edits.args.importButtonNPA = ACH:Execute(L["M+ Nameplate Alerts"], nil, 1, function() Private:Setup_WeakAuras('NPA') end)
-
-	E.Options.args.XVUI = XVUI.Options
+  E.Options.args.XVUI = XVUI.Options
 end

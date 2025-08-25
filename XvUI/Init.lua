@@ -22,8 +22,8 @@ Private.Name = '|cff0099ffXv|r|cffffffffUI|r'
 
 -- Constants: Media
 Private.Font = 'XvUI'
-Private.Texture = 'XvUI'
 Private.Outline = 'OUTLINE'
+Private.Texture = 'XvUI'
 
 -- Constants: Tables
 Private.Config = {}
