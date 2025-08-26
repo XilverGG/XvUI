@@ -22,104 +22,104 @@ end
 
 -- Installer table
 XVUI.InstallerData = {
-	Title = format('|cff0099ff%s %s|r', Private.Name, "Installation"),
+	Title = format('|cff0099ff%s %s|r', Private.Name, "Installer"),
 	Name = Private.Name,
 	tutorialImage = Private.Logo,
 	Pages = {
 		[1] = function()
-			PluginInstallFrame.SubTitle:SetFormattedText("Welcome to the installation for %s.", Private.Name)
-			PluginInstallFrame.Desc1:SetText("The XvUI installer will guide you through a few steps and apply the profiles of your choice.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Your existing profiles will not change. The installer will create a fresh profile."))
-			PluginInstallFrame.Desc3:SetText("Please read the steps carefully before clicking any buttons.")
-			PluginInstallFrame.Option1:Show()
-			PluginInstallFrame.Option1:SetScript("OnClick", InstallComplete)
-			PluginInstallFrame.Option1:SetText("Skip and close the installer")
+			PluginInstallFrame.SubTitle:SetFormattedText(L["installer_welcome_title"], Private.Name)
+			PluginInstallFrame.Desc1:SetText(L["installer_welcome_desc1"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_welcome_desc2"]))
+			PluginInstallFrame.Desc3:SetText(L["installer_welcome_desc3"])
+			--PluginInstallFrame.Option1:Show()
+			--PluginInstallFrame.Option1:SetScript("OnClick", InstallComplete)
+			--PluginInstallFrame.Option1:SetText(L["installer_close"])
 		end,
 		[2] = function()
-			PluginInstallFrame.SubTitle:SetText("ElvUI profile")
-			PluginInstallFrame.Desc1:SetText("Current layout is a multipurpose one, valid for Tank, Healing and DPS. Please click a button below to apply the profile.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Recommended step. Should not be skipped."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_elvui_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_elvui_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_recommended_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_ElvUI() end)
-			PluginInstallFrame.Option1:SetText("Setup Profile")
+			PluginInstallFrame.Option1:SetText(L["installer_elvui_button"])
 		end,
 		[3] = function()
-			PluginInstallFrame.SubTitle:SetText("Plater profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for Plater.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Recommended step. Should not be skipped."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_plater_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_plater_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_recommended_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_Plater(true) end)
-			PluginInstallFrame.Option1:SetText("Setup Plater")
+			PluginInstallFrame.Option1:SetText(L["installer_plater_button"])
 		end,
 		[4] = function()
-			PluginInstallFrame.SubTitle:SetText("BigWigs profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for BigWigs.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Recommended step. Should not be skipped."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_bigwigs_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_bigwigs_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_recommended_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_BigWigs() end)
-			PluginInstallFrame.Option1:SetText("Setup BigWigs")
+			PluginInstallFrame.Option1:SetText(L["installer_bigwigs_button"])
 		end,
 		[5] = function()
-			PluginInstallFrame.SubTitle:SetText("Details profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for Details.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Recommended step. Should not be skipped."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_details_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_details_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_recommended_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_Details(true) end)
-			PluginInstallFrame.Option1:SetText("Setup Details")
+			PluginInstallFrame.Option1:SetText(L["installer_details_button"])
 		end,
 		[6] = function()
-			PluginInstallFrame.SubTitle:SetText("OmniCD profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for OmniCD.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Recommended step. Should not be skipped."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_omnicd_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_omnicd_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_recommended_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_OmniCD(true) end)
-			PluginInstallFrame.Option1:SetText("Setup OmniCD")
+			PluginInstallFrame.Option1:SetText(L["installer_omnicd_button"])
 		end,
 		[7] = function()
-			PluginInstallFrame.SubTitle:SetText("WarpDeplete profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for WarpDeplete.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Recommended step. Should not be skipped."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_warpdeplete_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_warpdeplete_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_recommended_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_WarpDeplete(true) end)
-			PluginInstallFrame.Option1:SetText("Setup WarpDeplete")
+			PluginInstallFrame.Option1:SetText(L["installer_warpdeplete_button"])
 		end,
 		[8] = function()
-			PluginInstallFrame.SubTitle:SetText("NameplateSCT profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for NameplateSCT.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "This will overwrite your current NameplateSCT configuration."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_nameplatesct_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_nameplatesct_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_nameplatesct_info"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_NameplateSCT(true) end)
-			PluginInstallFrame.Option1:SetText("Setup NameplateSCT")
+			PluginInstallFrame.Option1:SetText(L["installer_nameplatesct_button"])
 		end,
 		[9] = function()
-			PluginInstallFrame.SubTitle:SetText("ActionBar Buddy (ElvUI Plugin)")
-			PluginInstallFrame.Desc1:SetText("Default XvUI configuration for ActionBar Buddy (ElvUI Plugin).")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Skip this step if you have not installed this addon."))
+			PluginInstallFrame.SubTitle:SetText(L["installer_actionbarbuddy_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_actionbarbuddy_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_optional_step"]))
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_ElvUI_ActionBarBuddy() end)
-			PluginInstallFrame.Option1:SetText("Setup")
+			PluginInstallFrame.Option1:SetText(L["installer_actionbarbuddy_button"])
 		end,
 		[10] = function()
-			PluginInstallFrame.SubTitle:SetText("AddOnSkins profile")
-			PluginInstallFrame.Desc1:SetText("Please click the button below to apply XvUI profile for AddOnSkins.")
-			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', "Skip this step if you have not installed this addon."))
-			PluginInstallFrame.Desc3:SetText("This will attach Details windows to ElvUI right panel.")
-			PluginInstallFrame.Desc4:SetText("Feel free to apply unless you want to place them elsewhere.")
+			PluginInstallFrame.SubTitle:SetText(L["installer_addonskins_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_addonskins_desc"])
+			PluginInstallFrame.Desc2:SetText(format('|cff0099ff%s', L["installer_optional_step"]))
+			PluginInstallFrame.Desc3:SetText(L["installer_addonskins_desc2"])
+			PluginInstallFrame.Desc4:SetText(L["installer_addonskins_desc3"])
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Private:Setup_AddOnSkins() end)
-			PluginInstallFrame.Option1:SetText("Setup AddOnSkins")
+			PluginInstallFrame.Option1:SetText(L["installer_addonskins_button"])
 		end,
 		[11] = function()
-			PluginInstallFrame.SubTitle:SetText("Installation Complete")
-			PluginInstallFrame.Desc1:SetText("You have completed the installation process.")
-			PluginInstallFrame.Desc2:SetText("Please click the button below in order to finalize the process and automatically reload your UI.")
+			PluginInstallFrame.SubTitle:SetText(L["installer_complete_title"])
+			PluginInstallFrame.Desc1:SetText(L["installer_complete_desc"])
+			PluginInstallFrame.Desc2:SetText(L["installer_complete_desc2"])
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", InstallComplete)
-			PluginInstallFrame.Option1:SetText("Finished")
+			PluginInstallFrame.Option1:SetText(L["installer_complete_button"])
 		end,
 	},
 	StepTitles = {
-		[1] = "Welcome",
+		[1] = L["installer_welcome_step_title"],
 		[2] = "ElvUI",
 		[3] = "Plater",
 		[4] = "BigWigs",
@@ -129,7 +129,7 @@ XVUI.InstallerData = {
 		[8] = "NameplateSCT",
 		[9] = "ActionBar Buddy",
 		[10] = "AddOnSkins",
-		[11] = "Installation Complete"
+		[11] = L["installer_complete_step_title"]
 	},
 	StepTitlesColor = {1, 1, 1},
 	StepTitlesColorSelected = {0, 179/255, 1},

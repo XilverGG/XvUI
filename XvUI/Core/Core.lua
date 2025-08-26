@@ -27,7 +27,7 @@ end
 
 -- Reload popup
 E.PopupDialogs.XVUI_RL = {
-  text = L["Reload required - continue?"],
+  text = L["core_reload_required"],
   button1 = ACCEPT,
   button2 = CANCEL,
   OnAccept = C_UI_Reload,
@@ -37,7 +37,7 @@ E.PopupDialogs.XVUI_RL = {
 
 -- Version check popup
 E.PopupDialogs.XVUI_VC = {
-  text = format("|cffFF0000%s|r", L["Your ElvUI is outdated - please update and reload."]),
+  text = format("|cffFF0000%s|r", L["core_elvui_outdated"]),
   whileDead = 1,
   hideOnEscape = false,
 }
@@ -46,7 +46,7 @@ E.PopupDialogs.XVUI_VC = {
 function Private:VersionCheck()
   if E.version < Private.RequiredElvUI then
     E:StaticPopup_Show("XVUI_VC")
-    Private:Print(format("|cffFF0000%s|r", L["Your ElvUI is outdated - please update and reload."]))
+    Private:Print(format("|cffFF0000%s|r", L["core_elvui_outdated"]))
   end
 end
 
