@@ -21,7 +21,6 @@ function Private:Setup_ElvUI_ActionBarBuddy()
   E.db["abb"]["bar1"]["displayTriggers"]["inVehicle"] = false
   E.db["abb"]["bar1"]["displayTriggers"]["isDragonRiding"] = false
   E.db["abb"]["bar1"]["displayTriggers"]["isPlayerSpellsFrameOpen"] = true
-  E.db["abb"]["bar1"]["displayTriggers"]["isPossessed"] = false
   E.db["abb"]["bar1"]["displayTriggers"]["isProfessionBookOpen"] = true
   E.db["abb"]["bar1"]["displayTriggers"]["notMaxHealth"] = false
   E.db["abb"]["bar1"]["displayTriggers"]["playerCasting"] = false
