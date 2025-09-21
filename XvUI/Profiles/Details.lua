@@ -12,7 +12,7 @@ local E, L = unpack(ElvUI)
 
 --[[
 Details profile
-LC: 27/08/2025
+LC: 07/09/2025
 ]]
 
 function Private:Setup_Details(args)
