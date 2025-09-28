@@ -705,7 +705,6 @@ function Private:Setup_ElvUI_Profile()
   E.db["unitframe"]["units"]["arena"]["castbar"]["positionsGroup"]["yOffset"] = -20
   E.db["unitframe"]["units"]["arena"]["castbar"]["width"] = 200
   E.db["unitframe"]["units"]["arena"]["debuffs"]["countFont"] = Private.Font
-  E.db["unitframe"]["units"]["arena"]["debuffs"]["priority"] = "Blacklist,Boss,RaidDebuffs,Personal,CCDebuffs,Whitelist"
   E.db["unitframe"]["units"]["arena"]["debuffs"]["xOffset"] = -5
   E.db["unitframe"]["units"]["arena"]["healPrediction"]["absorbStyle"] = "WRAPPED"
   E.db["unitframe"]["units"]["arena"]["health"]["attachTextTo"] = "Frame"
@@ -777,7 +776,6 @@ function Private:Setup_ElvUI_Profile()
   E.db["unitframe"]["units"]["focus"]["buffIndicator"]["countFont"] = Private.Font
   E.db["unitframe"]["units"]["focus"]["buffIndicator"]["enable"] = true
   E.db["unitframe"]["units"]["focus"]["buffIndicator"]["size"] = 10
-  E.db["unitframe"]["units"]["focus"]["buffs"]["priority"] = "Blacklist,Personal,PlayerBuffs,Dispellable"
   E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["font"] = Private.Font
   E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["fontSize"] = 14
   E.db["unitframe"]["units"]["focus"]["castbar"]["customTextFont"]["fontStyle"] = "SHADOW"
@@ -794,7 +792,6 @@ function Private:Setup_ElvUI_Profile()
   E.db["unitframe"]["units"]["focus"]["debuffs"]["anchorPoint"] = "BOTTOMRIGHT"
   E.db["unitframe"]["units"]["focus"]["debuffs"]["attachTo"] = "BUFFS"
   E.db["unitframe"]["units"]["focus"]["debuffs"]["enable"] = false
-	E.db["unitframe"]["units"]["focus"]["debuffs"]["priority"] = "Blacklist,Personal,Boss,RaidDebuffs,CCDebuffs,Dispellable,Whitelist"
   E.db["unitframe"]["units"]["focus"]["disableMouseoverGlow"] = true
   E.db["unitframe"]["units"]["focus"]["disableTargetGlow"] = true
   E.db["unitframe"]["units"]["focus"]["healPrediction"]["enable"] = false
@@ -808,9 +805,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["unitframe"]["units"]["focus"]["raidicon"]["xOffset"] = 2
   E.db["unitframe"]["units"]["focus"]["raidicon"]["yOffset"] = 0
   E.db["unitframe"]["units"]["focus"]["width"] = 135
-  E.db["unitframe"]["units"]["focustarget"]["buffs"]["priority"] = "Blacklist,Personal,PlayerBuffs,Dispellable"
   E.db["unitframe"]["units"]["focustarget"]["debuffs"]["attachTo"] = "BUFFS"
-	E.db["unitframe"]["units"]["focustarget"]["debuffs"]["priority"] = "Blacklist,Personal,Boss,RaidDebuffs,CCDebuffs,Dispellable,Whitelist"
   E.db["unitframe"]["units"]["focustarget"]["disableMouseoverGlow"] = true
   E.db["unitframe"]["units"]["focustarget"]["disableTargetGlow"] = true
   E.db["unitframe"]["units"]["focustarget"]["healPrediction"]["enable"] = false
@@ -878,13 +873,11 @@ function Private:Setup_ElvUI_Profile()
   E.db["unitframe"]["units"]["party"]["width"] = 200
   E.db["unitframe"]["units"]["pet"]["aurabar"]["attachTo"] = "DEBUFFS"
   E.db["unitframe"]["units"]["pet"]["aurabar"]["detachedWidth"] = 270
-	E.db["unitframe"]["units"]["pet"]["aurabar"]["priority"] = "Blacklist,blockNoDuration,Personal,Boss,RaidDebuffs,PlayerBuffs"
   E.db["unitframe"]["units"]["pet"]["aurabar"]["spacing"] = 0
   E.db["unitframe"]["units"]["pet"]["aurabar"]["yOffset"] = 0
   E.db["unitframe"]["units"]["pet"]["buffs"]["anchorPoint"] = "TOPLEFT"
   E.db["unitframe"]["units"]["pet"]["buffs"]["maxDuration"] = 0
   E.db["unitframe"]["units"]["pet"]["buffs"]["perrow"] = 8
-  E.db["unitframe"]["units"]["pet"]["buffs"]["priority"] = "blockNoDuration,Blacklist,Personal,nonPersonal"
   E.db["unitframe"]["units"]["pet"]["castbar"]["enable"] = false
   E.db["unitframe"]["units"]["pet"]["castbar"]["height"] = 40
   E.db["unitframe"]["units"]["pet"]["castbar"]["insideInfoPanel"] = false
@@ -895,7 +888,6 @@ function Private:Setup_ElvUI_Profile()
   E.db["unitframe"]["units"]["pet"]["debuffs"]["growthX"] = "RIGHT"
   E.db["unitframe"]["units"]["pet"]["debuffs"]["maxDuration"] = 0
   E.db["unitframe"]["units"]["pet"]["debuffs"]["perrow"] = 4
-  E.db["unitframe"]["units"]["pet"]["debuffs"]["priority"] = "Blacklist,Personal,nonPersonal"
   E.db["unitframe"]["units"]["pet"]["debuffs"]["sizeOverride"] = 32
   E.db["unitframe"]["units"]["pet"]["debuffs"]["spacing"] = 3
   E.db["unitframe"]["units"]["pet"]["debuffs"]["xOffset"] = 75

@@ -44,6 +44,6 @@ L["installer_abb_desc"] = "Default XvUI configuration for ActionBar Buddy (ElvUI
 L["installer_abb_button"] = "Setup ActionBar Buddy"
 L["installer_addonskins_title"] = "AddOnSkins Profile"
 L["installer_addonskins_desc"] = "Please click the button below to apply XvUI profile for AddOnSkins."
-L["installer_addonskins_desc2"] = "This will attach AddOnSkins to ElvUI right panel."
+L["installer_addonskins_desc2"] = "This will attach Details windows to ElvUI right panel. Apply only with 2 windows profile."
 L["installer_addonskins_desc3"] = "Feel free to apply unless you want to place them elsewhere."
 L["installer_addonskins_button"] = "Setup AddOnSkins"
