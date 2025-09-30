@@ -195,7 +195,7 @@ end
 
 -- ElvUI layout
 function Private:Setup_ElvUI_Profile()
-  E.data:SetProfile("XvUI")
+
   -- AB conversion
   E.db["convertPages"] = true
   -- Protect movers error
@@ -283,6 +283,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar1"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar1"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar1"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar1"]["showGrid"] = true
 
   E.db["actionbar"]["bar2"]["backdrop"] = false
   E.db["actionbar"]["bar2"]["buttonSize"] = 36
@@ -302,6 +303,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar2"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar2"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar2"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar2"]["showGrid"] = true
 
   E.db["actionbar"]["bar3"]["backdrop"] = false
   E.db["actionbar"]["bar3"]["buttonSize"] = 36
@@ -322,6 +324,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar3"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar3"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar3"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar3"]["showGrid"] = true
 
   E.db["actionbar"]["bar4"]["backdrop"] = false
   E.db["actionbar"]["bar4"]["buttonSize"] = 36
@@ -342,6 +345,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar4"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar4"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar4"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar4"]["showGrid"] = true
 
   E.db["actionbar"]["bar5"]["backdrop"] = false
   E.db["actionbar"]["bar5"]["buttonSize"] = 36
@@ -362,6 +366,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar5"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar5"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar5"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar5"]["showGrid"] = true
 
   E.db["actionbar"]["bar6"]["backdrop"] = false
   E.db["actionbar"]["bar6"]["buttonSize"] = 36
@@ -382,6 +387,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar6"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar6"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar6"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar6"]["showGrid"] = true
 
   E.db["actionbar"]["bar7"]["backdrop"] = false
   E.db["actionbar"]["bar7"]["buttonSize"] = 36
@@ -401,6 +407,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar7"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar7"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar7"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar7"]["showGrid"] = true
 
   E.db["actionbar"]["bar8"]["backdrop"] = false
   E.db["actionbar"]["bar8"]["buttonSize"] = 36
@@ -420,6 +427,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar8"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar8"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar8"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar8"]["showGrid"] = true
 
   E.db["actionbar"]["bar9"]["backdrop"] = false
   E.db["actionbar"]["bar9"]["buttonSize"] = 36
@@ -439,6 +447,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar9"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar9"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar9"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar9"]["showGrid"] = true
 
   E.db["actionbar"]["bar10"]["backdrop"] = false
   E.db["actionbar"]["bar10"]["buttonSize"] = 36
@@ -458,6 +467,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar10"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar10"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar10"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar10"]["showGrid"] = true
 
   E.db["actionbar"]["bar13"]["backdrop"] = false
   E.db["actionbar"]["bar13"]["buttonSize"] = 36
@@ -478,6 +488,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar13"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar13"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar13"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar13"]["showGrid"] = true
 
   E.db["actionbar"]["bar14"]["backdrop"] = false
   E.db["actionbar"]["bar14"]["buttonSize"] = 36
@@ -498,6 +509,7 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar14"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar14"]["macroTextYOffset"] = 0
   E.db["actionbar"]["bar14"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar14"]["showGrid"] = true
 
   E.db["actionbar"]["bar15"]["backdrop"] = false
   E.db["actionbar"]["bar15"]["buttonSize"] = 36
@@ -517,7 +529,8 @@ function Private:Setup_ElvUI_Profile()
   E.db["actionbar"]["bar15"]["macrotext"] = true
   E.db["actionbar"]["bar15"]["macroTextPosition"] = "BOTTOMRIGHT"
   E.db["actionbar"]["bar15"]["macroTextYOffset"] = 0
-  E.db["actionbar"]["bar15"]["point"] = "TOPLEFT"
+  E.db["actionbar"]["bar15"]["point"] = "BOTTOMLEFT"
+  E.db["actionbar"]["bar15"]["showGrid"] = true
 
   E.db["actionbar"]["barPet"]["backdrop"] = false
   E.db["actionbar"]["barPet"]["buttonsPerRow"] = 10
@@ -621,9 +634,9 @@ function Private:Setup_ElvUI_Profile()
   E.db["chat"]["panelHeight"] = 200
   E.db["chat"]["panelWidth"] = 450
   E.db["chat"]["tabFont"] = Private.Font
-  E.db["chat"]["tabSelectorColor"]["b"] = 0.9215686917305
-  E.db["chat"]["tabSelectorColor"]["g"] = 0.78039222955704
-  E.db["chat"]["tabSelectorColor"]["r"] = 0.24705883860588
+  --E.db["chat"]["tabSelectorColor"]["b"] = 0.9215686917305
+  --E.db["chat"]["tabSelectorColor"]["g"] = 0.78039222955704
+  --E.db["chat"]["tabSelectorColor"]["r"] = 0.24705883860588
   E.db["chat"]["timeStampFormat"] = "%H:%M "
   E.db["convertPages"] = true
 
