@@ -13,6 +13,9 @@ LC: 18/08/2025
 ]]
 
 function Private:Setup_ElvUI()
+
+  E.data:SetProfile(E.global.XVUI.dev and "XvUI" or "XvUI " .. Private.Version)
+
   Private:Setup_ElvUI_Profile()
   Private:Setup_ElvUI_PrivateDB()
   Private:Setup_ElvUI_GlobalDB()

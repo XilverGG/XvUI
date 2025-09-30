@@ -28,7 +28,7 @@ function Private:Setup_Details(args)
   local Details = _G.Details
 
   -- Profile name
-  local name = "XvUI"
+  local name = (E.global.XVUI.dev and "XvUI") or "XvUI " .. Private.Version
 
   local profileString = false
 

@@ -19,7 +19,7 @@ function Private:Setup_OmniCD(installer)
   end
 
   -- Profile names
-  local name = "XvUI"
+  local name = (E.global.XVUI.dev and "XvUI") or "XvUI " .. Private.Version
 
   -- Disable LibDualSpec to set the profile
   if E.Retail then

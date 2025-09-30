@@ -19,7 +19,7 @@ function Private:Setup_WarpDeplete(installer)
   end
 
   -- Profile name
-  local name = "XvUI"
+  local name = (E.global.XVUI.dev and "XvUI") or "XvUI " .. Private.Version
 
   -- Profile data
   WarpDepleteDB["profiles"][name] = WarpDepleteDB["profiles"][name] or {}
